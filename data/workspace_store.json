@@ -1,12 +1,12 @@
 {
   "telemetry": {
     "scholar_level": 16,
-    "total_xp": 4717,
+    "total_xp": 4757,
     "streak_days": 1,
     "quizzes_completed": 6,
     "bonus_tokens": 4,
     "next_level_xp": 4800,
-    "xp_progress": 217,
+    "xp_progress": 257,
     "xp_needed": 83,
     "active_scholar_badge": true,
     "badges": [
@@ -46,6 +46,46 @@
           "role": "assistant",
           "content": "Started a new session on **Quantum Mechanics**. What first principles or questions shall we explore?",
           "timestamp": "01:41 PM"
+        },
+        {
+          "role": "user",
+          "content": "@audio",
+          "timestamp": "01:42 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "**Focus Step:** ** duquantities",
+          "timestamp": "01:42 PM"
+        },
+        {
+          "role": "user",
+          "content": "Hi",
+          "timestamp": "01:47 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "**Focus Step:** **Hello and welcome to Purelearn.**\n\nI am your neuro-inclusive Socratic AI tutor. Rather than just handing out final answers, I guide you step-by-step so you build true conceptual understanding in STEM and all your subjects.\n\n**Question to Consider:** What topic, homework problem, or concept would you like to explore together today?",
+          "timestamp": "01:47 PM"
+        },
+        {
+          "role": "user",
+          "content": "Help me learn about Quantum physics",
+          "timestamp": "01:47 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "**Focus Step:** <|system|>You are Purelearn AI, a neuro-inclusive Socratic tutor.",
+          "timestamp": "01:47 PM"
+        },
+        {
+          "role": "user",
+          "content": "hi",
+          "timestamp": "02:12 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "**Focus Step:** **Hello and welcome to Purelearn.**\n\nI am your neuro-inclusive Socratic AI tutor. Rather than just handing out final answers, I guide you step-by-step so you build true conceptual understanding in STEM and all your subjects.\n\n**Question to Consider:** What topic, homework problem, or concept would you like to explore together today?",
+          "timestamp": "02:12 PM"
         }
       ]
     }
