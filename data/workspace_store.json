@@ -1,0 +1,319 @@
+{
+  "telemetry": {
+    "scholar_level": 16,
+    "total_xp": 4717,
+    "streak_days": 1,
+    "quizzes_completed": 6,
+    "bonus_tokens": 4,
+    "next_level_xp": 4800,
+    "xp_progress": 217,
+    "xp_needed": 83,
+    "active_scholar_badge": true,
+    "badges": [
+      {
+        "id": "quiz_master",
+        "name": "First Quiz Completed",
+        "icon": "Q"
+      },
+      {
+        "id": "streak_master",
+        "name": "Streak Master",
+        "icon": "S"
+      },
+      {
+        "id": "socratic_master",
+        "name": "Socratic Discovery Master",
+        "icon": "M"
+      }
+    ],
+    "reminders": [
+      "Test your retention on 'Mathematics' with a grounded material quiz.",
+      "Your 1-day study streak is active. Keep momentum going today!",
+      "Only 83 XP needed to reach Scholar Level 17."
+    ]
+  },
+  "chats": [
+    {
+      "id": "chat-math-1",
+      "title": "Mathematics",
+      "subject": "Mathematics",
+      "type": "Text",
+      "date": "9/7/2026",
+      "pinned": true,
+      "grounding": "Grounded in Text source (Calculus & Mechanics)",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Can you explain how the derivative applies to an oscillating current like $I(t) = 5\\sin(2t)$?",
+          "timestamp": "12:54 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "Welcome back to your calculus inquiry. When analyzing $I(t) = 5\\sin(2t)$, let's look at the underlying relationship between electric charge $q(t)$ and current $I(t)$.\n\n### 4. Common Pitfalls, Edge Cases & Student Misconceptions\n• **Forgetting the Chain Rule in Reverse (U-Substitution):** When integrating an oscillating current $I(t) = 5\\sin(2t)$, students often forget to divide by the inner coefficient ($2$).\n• **Ignoring the Constant of Integration ($+C$):** When working with indefinite integrals, leaving off $+C$ loses an entire family of valid vertical shifts.\n\n### 5. Guided Socratic Discovery & Practice Challenge\nIf we change our current function to $I(t) = 5\\sin(4t)$ over the exact same time interval from $t = 0$ to $t = \\pi/4$, how do you predict the total accumulated charge $Q$ will change compared to our previous result of $2.5\\text{ Coulombs}$?\n\n*Hint: Think about how doubling the frequency compresses the wave horizontally, and what that does to the area under the curve!*",
+          "timestamp": "12:59 PM"
+        }
+      ]
+    },
+    {
+      "id": "chat-webdev-1",
+      "title": "Web Development",
+      "subject": "Web Development",
+      "type": "Text",
+      "date": "7/25/2026",
+      "pinned": true,
+      "grounding": "Grounded in Modern Web Architecture",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Why is client-side state hydration tricky when using Server-Sent Events?",
+          "timestamp": "03:15 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "When dealing with real-time SSE token streams, traditional DOM re-renders can destroy user scroll position and cursor focus.\n\nTo overcome this, modern architectures decouple the incoming token buffer from the rendered KaTeX equations, using requestAnimationFrame batching.",
+          "timestamp": "03:16 PM"
+        }
+      ]
+    },
+    {
+      "id": "chat-general-1",
+      "title": "General Chat (09:15 AM)",
+      "subject": "General STEM",
+      "type": "Text",
+      "date": "10/21/2026",
+      "pinned": false,
+      "grounding": "Grounded in General Inquiry",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is the primary difference between passive memorization and Socratic inquiry?",
+          "timestamp": "09:15 AM"
+        },
+        {
+          "role": "assistant",
+          "content": "Passive memorization stores facts in short-term recall without synaptic integration. Socratic inquiry prompts your brain to synthesize intermediate premises, forming resilient cognitive schemas that survive exam stress.",
+          "timestamp": "09:16 AM"
+        }
+      ]
+    },
+    {
+      "id": "chat-python-1",
+      "title": "I would like to study Python...",
+      "subject": "Computer Science",
+      "type": "Text",
+      "date": "9/24/2026",
+      "pinned": false,
+      "grounding": "Grounded in Python 3 Systems Architecture",
+      "messages": [
+        {
+          "role": "user",
+          "content": "How do Python generators save memory compared to list comprehensions?",
+          "timestamp": "11:20 AM"
+        },
+        {
+          "role": "assistant",
+          "content": "A list comprehension allocates the entire sequence in RAM simultaneously ($O(N)$ memory). A generator function with `yield` produces values on demand ($O(1)$ memory), retaining only its current frame state.",
+          "timestamp": "11:22 AM"
+        }
+      ]
+    },
+    {
+      "id": "chat-matrix-1",
+      "title": "I need to learn about matrix...",
+      "subject": "Linear Algebra",
+      "type": "Text",
+      "date": "9/11/2026",
+      "pinned": false,
+      "grounding": "Grounded in Linear Algebra & Vector Spaces",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What does an eigenvalue geometrically represent in a linear transformation?",
+          "timestamp": "02:10 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "When a matrix $A$ acts on a vector $v$, it generally rotates and scales it. An eigenvector is a special direction where $A v = \\lambda v$: the vector is not rotated at all, only stretched by the factor $\\lambda$.",
+          "timestamp": "02:12 PM"
+        }
+      ]
+    },
+    {
+      "id": "chat-yt-aiml-1",
+      "title": "YouTube: AI, Machine Learning...",
+      "subject": "Artificial Intelligence",
+      "type": "PDF",
+      "date": "9/11/2026",
+      "pinned": false,
+      "grounding": "Grounded in Ingested AI Architecture PDF",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Why does Multi-Head Attention split queries and keys into separate subspaces?",
+          "timestamp": "04:30 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "Splitting into $h$ heads allows the model to jointly attend to information from different representation subspaces at different positions. One head may track grammatical agreement, while another attends to spatial relationships.",
+          "timestamp": "04:32 PM"
+        }
+      ]
+    },
+    {
+      "id": "chat-africa-prize-1",
+      "title": "https://africaprize.raeng...",
+      "subject": "Engineering Innovation",
+      "type": "Link",
+      "date": "9/8/2026",
+      "pinned": false,
+      "grounding": "Grounded in Royal Academy of Engineering Resource",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is the critical failure point when scaling hardware prototypes into rural markets?",
+          "timestamp": "10:05 AM"
+        },
+        {
+          "role": "assistant",
+          "content": "Local supply-chain fragility for replacement parts and extreme thermal variation. Scalable engineering designs prioritize modular, off-the-shelf local components over proprietary enclosures.",
+          "timestamp": "10:07 AM"
+        }
+      ]
+    },
+    {
+      "id": "chat-n8n-1",
+      "title": "n8n Zero to technical application",
+      "subject": "Automation Engineering",
+      "type": "YouTube",
+      "date": "9/5/2026",
+      "pinned": false,
+      "grounding": "Grounded in n8n Orchestration Video Transcript",
+      "messages": [
+        {
+          "role": "user",
+          "content": "How do webhook trigger nodes authenticate incoming requests reliably?",
+          "timestamp": "08:40 PM"
+        },
+        {
+          "role": "assistant",
+          "content": "Via HMAC-SHA256 signature verification in headers, combined with timestamp window validation to prevent replay attacks.",
+          "timestamp": "08:42 PM"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-math-1",
+      "topic": "MATHEMATICS",
+      "title": "Mathematics Notes",
+      "updated": "9/7/2026",
+      "content": "In calculus, the **derivative** of a function measures the instantaneous rate of change. Formally, it is defined as the limit of the average rate of change as the time interval shrinks to zero:\n\n$$\\frac{dy}{dx} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x) - f(x)}{\\Delta x}$$\n\nWhen dealing with trigonometric functions like the sine wave that models our alternating electric signal, something remarkable happens. The derivative of the sine function is the cosine function:\n\n$$\\frac{d}{dx} (\\sin(x)) = \\cos(x)$$\n\n• What does $\\sin(x)$ represent? Your vertical position on the wave.\n• What does $\\cos(x)$ represent? Your instantaneous vertical velocity (how fast your height is changing).\n\n## 2. Worked Example: Analyzing a Periodic Wave\nConsider an oscillating charge function $q(t) = Q_0 \\cos(\\omega t)$. The instantaneous electric current is the time rate of change of charge:\n\n$$I(t) = \\frac{dq}{dt} = -Q_0 \\omega \\sin(\\omega t)$$"
+    },
+    {
+      "id": "note-africa-1",
+      "topic": "ENGINEERING ENTREPRENEURSHIP",
+      "title": "Summary: https://africaprize.raeng.org.uk/",
+      "updated": "9/8/2026",
+      "content": "# Overview of the Africa Prize for Engineering Innovation\n\nThe initiative bridges the gap between lab research and scalable commercial impact across sub-Saharan Africa.\n\n### Key Pillars:\n1. **Technological Feasibility:** Grounded engineering validation.\n2. **Commercial Viability:** Unit economics and customer discovery.\n3. **Social Impact:** Tangible job creation and sustainable development."
+    },
+    {
+      "id": "note-yt-aiml-1",
+      "topic": "ARTIFICIAL INTELLIGENCE",
+      "title": "YouTube: AI, Machine Learning, Deep Learning and Generative AI Explained",
+      "updated": "9/11/2026",
+      "content": "# Architectural Foundation of Modern AI\n\nDeep learning models transform input embeddings through layers of parameterized linear transformations and non-linear activations:\n\n$$h^{(l)} = \\sigma(W^{(l)} h^{(l-1)} + b^{(l)})$$\n\nSelf-attention extends this by allowing every token to calculate dynamic affinities with every other token in the sequence."
+    },
+    {
+      "id": "note-n8n-1",
+      "topic": "AUTOMATION ENGINEERING",
+      "title": "n8n - Notes on n8n",
+      "updated": "9/5/2026",
+      "content": "# Fundamentals of Workflow Orchestration with n8n\n\nNode-based workflows route JSON payloads through transforms, conditional branches, and HTTP destinations with retry mechanisms and state checkpoints."
+    }
+  ],
+  "decks": [
+    {
+      "id": "deck-ai-1",
+      "category": "AI TUTORING",
+      "title": "Summary: General Chat (09:15 AM)",
+      "cards": [
+        {
+          "id": "c1",
+          "question": "What is the core principle of optimization in Artificial Intelligence and Neural Networks?",
+          "answer": "Gradient Descent minimizes loss $\\mathcal{L}(\\theta)$ by iteratively updating parameters: $\\theta \\leftarrow \\theta - \\eta \\nabla_\\theta \\mathcal{L}$.",
+          "status": "understood"
+        }
+      ]
+    },
+    {
+      "id": "deck-cs-1",
+      "category": "COMPUTER SCIENCE",
+      "title": "Summary: I would like to study Python...",
+      "cards": [
+        {
+          "id": "c2",
+          "question": "What is the time and space complexity of accessing an item in a Python dictionary?",
+          "answer": "Average time complexity is $O(1)$ through hash table probing; space complexity is $O(N)$ based on table capacity and collision thresholds.",
+          "status": "review"
+        },
+        {
+          "id": "c3",
+          "question": "How does the Python Global Interpreter Lock (GIL) impact CPU-bound multithreading?",
+          "answer": "The GIL ensures only one native thread executes Python bytecode at a time, preventing true CPU parallelism across cores for pure Python threads.",
+          "status": "understood"
+        },
+        {
+          "id": "c4",
+          "question": "What is the difference between shallow copy and deep copy in Python?",
+          "answer": "Shallow copy constructs a new collection and populates it with references to child objects; deep copy recursively copies child objects.",
+          "status": "understood"
+        }
+      ]
+    },
+    {
+      "id": "deck-ai-deep-1",
+      "category": "ARTIFICIAL INTELLIGENCE",
+      "title": "Activation Functions & Optimizers",
+      "cards": [
+        {
+          "id": "c5",
+          "question": "Why is the SwiGLU activation preferred over standard ReLU in modern transformer architectures?",
+          "answer": "SwiGLU combines Swish gating with linear projections: $\\text{SwiGLU}(x) = (x W \\cdot \\text{sigmoid}(\\beta x W)) \\cdot (x V)$, providing smoother gradients and richer capacity.",
+          "status": "understood"
+        },
+        {
+          "id": "c6",
+          "question": "What role does RMSNorm play compared to standard LayerNorm?",
+          "answer": "RMSNorm simplifies computation by enforcing root-mean-square invariance without calculating the mean shift, reducing latency without harming convergence.",
+          "status": "understood"
+        }
+      ]
+    },
+    {
+      "id": "deck-math-1",
+      "category": "MATHEMATICS",
+      "title": "Mathematics Notes",
+      "cards": [
+        {
+          "id": "c7",
+          "question": "State Newton's Second Law of Motion in both scalar and differential form.",
+          "answer": "Scalar: $F = m \\cdot a$. Differential Form: $F = \\frac{dp}{dt} = m \\frac{d^2 x}{dt^2}$ where $p$ is momentum.",
+          "status": "understood"
+        },
+        {
+          "id": "c8",
+          "question": "What is the Product Rule for differentiating two functions $u(x)$ and $v(x)$?",
+          "answer": "$$\\frac{d}{dx}[u \\cdot v] = u' \\cdot v + u \\cdot v'$$",
+          "status": "understood"
+        },
+        {
+          "id": "c9",
+          "question": "What is the geometric meaning of the definite integral $\\int_{a}^{b} f(x)dx$?",
+          "answer": "The signed area under the curve $f(x)$ bounded between the vertical lines $x = a$ and $x = b$ and the horizontal x-axis.",
+          "status": "review"
+        }
+      ]
+    }
+  ]
+}

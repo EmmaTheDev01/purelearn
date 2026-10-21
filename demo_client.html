@@ -123,15 +123,7 @@
       --primary-fg: #1c1917;
     }
 
-    /* ==========================================================================
-       Base & Reset
-       ========================================================================== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--font-sans);
       background: var(--bg-page);
@@ -142,14 +134,12 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    button, input, textarea {
+    button, input, textarea, select {
       font-family: inherit;
       color: inherit;
     }
 
-    /* ==========================================================================
-       Sidebar Navigation
-       ========================================================================== */
+    /* Sidebar Navigation */
     .app-sidebar {
       width: var(--sidebar-width);
       background: var(--bg-surface);
@@ -157,14 +147,12 @@
       display: flex;
       flex-direction: column;
       flex-shrink: 0;
-      transition: width 0.2s ease, transform 0.2s ease;
+      transition: width 0.2s ease;
       z-index: 40;
       height: 100vh;
     }
 
-    .app-sidebar.collapsed {
-      width: var(--sidebar-collapsed-width);
-    }
+    .app-sidebar.collapsed { width: var(--sidebar-collapsed-width); }
 
     .sidebar-header {
       height: var(--topbar-height);
@@ -214,13 +202,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s, color 0.15s;
+      transition: background 0.15s;
     }
 
-    .sidebar-toggle-btn:hover {
-      background: var(--bg-subtle);
-      color: var(--text-main);
-    }
+    .sidebar-toggle-btn:hover { background: var(--bg-subtle); color: var(--text-main); }
 
     .sidebar-content {
       flex: 1;
@@ -246,14 +231,11 @@
       gap: 8px;
       cursor: pointer;
       box-shadow: var(--shadow-sm);
-      transition: opacity 0.15s, transform 0.1s;
       white-space: nowrap;
       overflow: hidden;
     }
 
-    .btn-upload-material:hover {
-      opacity: 0.92;
-    }
+    .btn-upload-material:hover { opacity: 0.92; }
 
     .app-sidebar.collapsed .btn-upload-material {
       width: 40px;
@@ -262,9 +244,7 @@
       padding: 0;
     }
 
-    .app-sidebar.collapsed .btn-upload-material span {
-      display: none;
-    }
+    .app-sidebar.collapsed .btn-upload-material span { display: none; }
 
     .sidebar-section-title {
       font-size: 0.7rem;
@@ -276,16 +256,9 @@
       margin-bottom: 4px;
     }
 
-    .app-sidebar.collapsed .sidebar-section-title {
-      display: none;
-    }
+    .app-sidebar.collapsed .sidebar-section-title { display: none; }
 
-    .nav-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
+    .nav-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
 
     .nav-item-btn {
       width: 100%;
@@ -306,22 +279,9 @@
       white-space: nowrap;
     }
 
-    .nav-item-btn:hover {
-      background: var(--bg-subtle);
-      color: var(--text-main);
-    }
-
-    .nav-item-btn.active {
-      background: var(--primary);
-      color: var(--primary-fg);
-      font-weight: 600;
-    }
-
-    .nav-item-btn svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
+    .nav-item-btn:hover { background: var(--bg-subtle); color: var(--text-main); }
+    .nav-item-btn.active { background: var(--primary); color: var(--primary-fg); font-weight: 600; }
+    .nav-item-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 
     .app-sidebar.collapsed .nav-item-btn {
       justify-content: center;
@@ -331,14 +291,9 @@
       margin: 0 auto;
     }
 
-    .app-sidebar.collapsed .nav-item-btn span {
-      display: none;
-    }
+    .app-sidebar.collapsed .nav-item-btn span { display: none; }
 
-    .sidebar-footer {
-      padding: 12px;
-      border-top: 1px solid var(--border-subtle);
-    }
+    .sidebar-footer { padding: 12px; border-top: 1px solid var(--border-subtle); }
 
     .premium-banner-card {
       background: var(--bg-subtle);
@@ -352,40 +307,14 @@
       color: inherit;
     }
 
-    .premium-crown-icon {
-      color: #f59e0b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+    .premium-crown-icon { color: #f59e0b; display: flex; align-items: center; flex-shrink: 0; }
+    .premium-text-title { font-size: 0.8rem; font-weight: 700; line-height: 1.2; }
+    .premium-text-desc { font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-    .premium-text-title {
-      font-size: 0.8rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
+    .app-sidebar.collapsed .premium-banner-card { justify-content: center; padding: 8px 0; }
+    .app-sidebar.collapsed .premium-banner-card .premium-info { display: none; }
 
-    .premium-text-desc {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .app-sidebar.collapsed .premium-banner-card {
-      justify-content: center;
-      padding: 8px 0;
-    }
-
-    .app-sidebar.collapsed .premium-banner-card .premium-info {
-      display: none;
-    }
-
-    /* ==========================================================================
-       Main App Layout Container
-       ========================================================================== */
+    /* Main Container */
     .app-main {
       flex: 1;
       display: flex;
@@ -395,7 +324,7 @@
       background: var(--bg-page);
     }
 
-    /* Top Navbar */
+    /* Top Bar */
     .app-topbar {
       height: var(--topbar-height);
       background: var(--bg-surface);
@@ -408,23 +337,10 @@
       z-index: 30;
     }
 
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .topbar-page-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
 
-    .topbar-page-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
 
     .topbar-search-box {
       display: flex;
@@ -439,14 +355,7 @@
       font-size: 0.82rem;
     }
 
-    .topbar-search-box input {
-      background: transparent;
-      border: none;
-      outline: none;
-      width: 100%;
-      font-size: 0.82rem;
-    }
-
+    .topbar-search-box input { background: transparent; border: none; outline: none; width: 100%; font-size: 0.82rem; }
     .topbar-search-box .kbd-shortcut {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
@@ -473,11 +382,7 @@
       transition: all 0.15s;
     }
 
-    .topbar-icon-btn:hover {
-      background: var(--bg-subtle);
-      color: var(--text-main);
-      border-color: var(--border-color);
-    }
+    .topbar-icon-btn:hover { background: var(--bg-subtle); color: var(--text-main); border-color: var(--border-color); }
 
     .notification-badge {
       position: absolute;
@@ -505,11 +410,32 @@
       cursor: pointer;
     }
 
-    .user-avatar-btn img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .user-avatar-btn img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Audio Player Floating Header Banner */
+    .audio-player-banner {
+      display: none;
+      background: #09090b;
+      color: white;
+      padding: 8px 20px;
+      font-size: 0.8rem;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 25;
     }
+
+    .audio-player-banner.active { display: flex; }
+
+    .audio-status-left { display: flex; align-items: center; gap: 10px; }
+    .audio-waveform-anim {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse { 0% { opacity: 0.4; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0.4; transform: scale(0.9); } }
 
     /* Views Layout */
     .view-container {
@@ -519,21 +445,14 @@
       overflow: hidden;
     }
 
-    .view-container.active {
-      display: flex;
-    }
+    .view-container.active { display: flex; }
 
     /* ==========================================================================
        VIEW 1: Dashboard (Chat & Study Workspace - 3 Columns)
        ========================================================================== */
-    .workspace-cols {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
+    .workspace-cols { display: flex; width: 100%; height: 100%; overflow: hidden; }
 
-    /* Col 1: Material & Chat Library */
+    /* Col 1: Materials & Recent Chats Sidebar */
     .material-chat-sidebar {
       width: 280px;
       background: var(--bg-surface);
@@ -552,11 +471,7 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
-    .chat-search-input-wrap {
-      flex: 1;
-      position: relative;
-    }
-
+    .chat-search-input-wrap { flex: 1; position: relative; }
     .chat-search-input-wrap input {
       width: 100%;
       padding: 6px 10px 6px 30px;
@@ -566,7 +481,6 @@
       background: var(--bg-subtle);
       outline: none;
     }
-
     .chat-search-input-wrap svg {
       position: absolute;
       left: 8px;
@@ -590,16 +504,9 @@
       cursor: pointer;
       transition: all 0.15s;
     }
+    .icon-square-btn:hover { background: var(--bg-subtle); color: var(--text-main); }
 
-    .icon-square-btn:hover {
-      background: var(--bg-subtle);
-      color: var(--text-main);
-    }
-
-    .new-chat-btn-wrap {
-      padding: 10px 12px;
-    }
-
+    .new-chat-btn-wrap { padding: 10px 12px; }
     .btn-new-chat {
       width: 100%;
       height: 36px;
@@ -645,23 +552,10 @@
       cursor: pointer;
       transition: background 0.15s;
     }
+    .chat-item-card:hover { background: var(--bg-subtle); }
+    .chat-item-card.active { background: var(--bg-subtle); border: 1px solid var(--border-color); }
 
-    .chat-item-card:hover {
-      background: var(--bg-subtle);
-    }
-
-    .chat-item-card.active {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-    }
-
-    .chat-item-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      min-width: 0;
-    }
-
+    .chat-item-left { display: flex; align-items: center; gap: 8px; min-width: 0; }
     .chat-icon-box {
       width: 26px;
       height: 26px;
@@ -674,44 +568,13 @@
       flex-shrink: 0;
     }
 
-    .chat-meta {
-      min-width: 0;
-    }
+    .chat-meta { min-width: 0; }
+    .chat-meta-title { font-size: 0.82rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-main); }
+    .chat-meta-sub { font-size: 0.7rem; color: var(--text-light); white-space: nowrap; }
+    .chat-item-actions { display: flex; align-items: center; gap: 2px; color: var(--text-light); }
 
-    .chat-meta-title {
-      font-size: 0.82rem;
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: var(--text-main);
-    }
-
-    .chat-meta-sub {
-      font-size: 0.7rem;
-      color: var(--text-light);
-      white-space: nowrap;
-    }
-
-    .chat-item-actions {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      color: var(--text-light);
-    }
-
-    .chat-sidebar-footer {
-      padding: 10px;
-      border-top: 1px solid var(--border-subtle);
-      text-align: center;
-    }
-
-    .chat-sidebar-footer a {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-decoration: underline;
-      cursor: pointer;
-    }
+    .chat-sidebar-footer { padding: 10px; border-top: 1px solid var(--border-subtle); text-align: center; }
+    .chat-sidebar-footer a { font-size: 0.78rem; color: var(--text-muted); text-decoration: underline; cursor: pointer; }
 
     /* Col 2: Center Conversation Stream */
     .workspace-center-chat {
@@ -734,12 +597,7 @@
       flex-shrink: 0;
     }
 
-    .working-on-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
+    .working-on-badge { display: flex; align-items: center; gap: 10px; }
     .working-on-icon {
       width: 28px;
       height: 28px;
@@ -753,16 +611,8 @@
       font-weight: 700;
     }
 
-    .working-on-title {
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .working-on-sub {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
+    .working-on-title { font-size: 0.84rem; font-weight: 700; color: var(--text-main); }
+    .working-on-sub { font-size: 0.72rem; color: var(--text-muted); }
 
     .btn-clear-focus {
       padding: 4px 10px;
@@ -775,11 +625,7 @@
       cursor: pointer;
       transition: all 0.15s;
     }
-
-    .btn-clear-focus:hover {
-      background: var(--bg-subtle);
-      color: var(--text-main);
-    }
+    .btn-clear-focus:hover { background: var(--bg-subtle); color: var(--text-main); }
 
     /* Quick Launch Bar */
     .quick-launch-bar {
@@ -793,14 +639,7 @@
       flex-shrink: 0;
     }
 
-    .quick-launch-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--text-light);
-      letter-spacing: 0.06em;
-      white-space: nowrap;
-    }
-
+    .quick-launch-label { font-size: 0.7rem; font-weight: 700; color: var(--text-light); letter-spacing: 0.06em; white-space: nowrap; }
     .quick-pill-btn {
       padding: 4px 12px;
       background: var(--bg-surface);
@@ -816,13 +655,9 @@
       align-items: center;
       gap: 6px;
     }
+    .quick-pill-btn:hover { border-color: var(--border-focus); background: var(--bg-subtle); }
 
-    .quick-pill-btn:hover {
-      border-color: var(--border-focus);
-      background: var(--bg-subtle);
-    }
-
-    /* Messages Stream */
+    /* Messages Stream Viewport */
     .chat-messages-viewport {
       flex: 1;
       overflow-y: auto;
@@ -832,19 +667,9 @@
       gap: 20px;
     }
 
-    .chat-bubble-row {
-      display: flex;
-      gap: 12px;
-      width: 100%;
-    }
-
-    .chat-bubble-row.assistant-row {
-      justify-content: flex-start;
-    }
-
-    .chat-bubble-row.user-row {
-      justify-content: flex-end;
-    }
+    .chat-bubble-row { display: flex; gap: 12px; width: 100%; }
+    .chat-bubble-row.assistant-row { justify-content: flex-start; }
+    .chat-bubble-row.user-row { justify-content: flex-end; }
 
     .assistant-avatar {
       width: 32px;
@@ -868,24 +693,10 @@
       box-shadow: var(--shadow-xs);
     }
 
-    .user-row .message-body {
-      background: var(--bg-subtle);
-      border-color: var(--border-color);
-    }
-
-    .message-body p {
-      margin-bottom: 10px;
-    }
-
-    .message-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .message-body h3, .message-body h4 {
-      margin: 12px 0 6px 0;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
+    .user-row .message-body { background: var(--bg-subtle); border-color: var(--border-color); }
+    .message-body p { margin-bottom: 10px; }
+    .message-body p:last-child { margin-bottom: 0; }
+    .message-body h3, .message-body h4 { margin: 12px 0 6px 0; font-size: 0.95rem; font-weight: 700; }
 
     .message-action-bar {
       margin-top: 12px;
@@ -907,12 +718,9 @@
       gap: 4px;
       transition: color 0.15s;
     }
+    .msg-action-link:hover { color: var(--text-main); font-weight: 600; }
 
-    .msg-action-link:hover {
-      color: var(--text-main);
-    }
-
-    /* Chat Input Container */
+    /* Chat Input */
     .chat-input-wrapper {
       padding: 14px 20px 18px 20px;
       background: var(--bg-surface);
@@ -925,14 +733,10 @@
       border-radius: var(--radius-lg);
       background: var(--bg-surface);
       box-shadow: var(--shadow-sm);
-      transition: border-color 0.15s, box-shadow 0.15s;
+      transition: border-color 0.15s;
       overflow: hidden;
     }
-
-    .chat-input-box:focus-within {
-      border-color: var(--border-focus);
-      box-shadow: 0 0 0 1px var(--border-focus);
-    }
+    .chat-input-box:focus-within { border-color: var(--border-focus); }
 
     .chat-input-textarea {
       width: 100%;
@@ -956,12 +760,7 @@
       background: var(--bg-page);
     }
 
-    .input-left-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .input-left-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .input-icon-btn {
       background: transparent;
       border: none;
@@ -972,13 +771,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.15s;
     }
-
-    .input-icon-btn:hover {
-      background: var(--bg-subtle);
-      color: var(--text-main);
-    }
+    .input-icon-btn:hover { background: var(--bg-subtle); color: var(--text-main); }
 
     .control-chip {
       padding: 3px 8px;
@@ -994,12 +788,7 @@
       gap: 4px;
       user-select: none;
     }
-
-    .control-chip.active {
-      background: var(--primary);
-      color: var(--primary-fg);
-      border-color: var(--primary);
-    }
+    .control-chip.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
 
     .btn-send-message {
       width: 32px;
@@ -1012,13 +801,8 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: opacity 0.15s;
     }
-
-    .btn-send-message:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
+    .btn-send-message:disabled { opacity: 0.35; cursor: not-allowed; }
 
     /* Col 3: Right Study Progress Panel */
     .workspace-right-progress {
@@ -1034,28 +818,9 @@
       gap: 16px;
     }
 
-    .progress-header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .progress-title-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--text-light);
-      text-transform: uppercase;
-    }
-
-    .bonus-tokens-badge {
-      background: var(--badge-orange);
-      color: var(--badge-orange-text);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: var(--radius-full);
-    }
+    .progress-header-row { display: flex; align-items: center; justify-content: space-between; }
+    .progress-title-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-light); text-transform: uppercase; }
+    .bonus-tokens-badge { background: var(--badge-orange); color: var(--badge-orange-text); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-full); }
 
     .scholar-achievement-card {
       background: var(--bg-page);
@@ -1081,15 +846,8 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .scholar-card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .scholar-card-sub {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+    .scholar-card-title { font-size: 0.95rem; font-weight: 700; }
+    .scholar-card-sub { font-size: 0.78rem; color: var(--text-muted); }
 
     .level-streak-row {
       width: 100%;
@@ -1101,808 +859,170 @@
       font-weight: 600;
     }
 
-    .streak-pill {
-      background: var(--badge-orange);
-      color: var(--badge-orange-text);
-      padding: 2px 8px;
-      border-radius: var(--radius-full);
-      font-size: 0.72rem;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .streak-pill { background: var(--badge-orange); color: var(--badge-orange-text); padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.72rem; display: flex; align-items: center; gap: 4px; }
 
-    .rank-progress-bar {
-      width: 100%;
-      height: 6px;
-      background: var(--border-color);
-      border-radius: var(--radius-full);
-      overflow: hidden;
-      margin: 4px 0;
-    }
+    .rank-progress-bar { width: 100%; height: 6px; background: var(--border-color); border-radius: var(--radius-full); overflow: hidden; margin: 4px 0; }
+    .rank-progress-fill { width: 72%; height: 100%; background: var(--primary); transition: width 0.3s; }
+    .rank-points-text { width: 100%; display: flex; justify-content: flex-end; font-size: 0.7rem; color: var(--text-light); }
 
-    .rank-progress-fill {
-      width: 72%;
-      height: 100%;
-      background: var(--primary);
-    }
+    .badges-section { width: 100%; border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 6px; display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; }
+    .badges-icons-group { display: flex; gap: 6px; }
+    .mini-badge-icon { width: 22px; height: 22px; border-radius: 4px; background: var(--bg-surface); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; }
 
-    .rank-points-text {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      font-size: 0.7rem;
-      color: var(--text-light);
-    }
-
-    .badges-section {
-      width: 100%;
-      border-top: 1px solid var(--border-color);
-      padding-top: 10px;
-      margin-top: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.75rem;
-    }
-
-    .badges-icons-group {
-      display: flex;
-      gap: 6px;
-    }
-
-    .mini-badge-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
-
-    .study-reminders-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .study-reminders-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .study-reminders-list {
-      list-style-type: disc;
-      padding-left: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
+    .study-reminders-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+    .study-reminders-title { font-size: 0.72rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+    .study-reminders-list { list-style-type: disc; padding-left: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
 
     /* ==========================================================================
        VIEW 2: Notes & Summaries View (Screenshot 3)
        ========================================================================== */
-    .notes-workspace-wrap {
-      display: flex;
+    .notes-workspace-wrap { display: flex; width: 100%; height: 100%; }
+    .notes-list-col { width: 320px; background: var(--bg-surface); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; height: 100%; flex-shrink: 0; }
+    .notes-list-top { padding: 12px; display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid var(--border-subtle); }
+    .notes-btn-row { display: flex; align-items: center; gap: 8px; }
+    .btn-tablet-notepad { flex: 1; height: 34px; border: 1px solid var(--border-color); background: var(--bg-surface); border-radius: var(--radius); font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
+    .btn-tablet-notepad:hover { background: var(--bg-subtle); }
+
+    .notes-cards-scroll { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+    .note-card-item { padding: 12px; border-radius: var(--radius); border: 1px solid var(--border-color); background: var(--bg-surface); cursor: pointer; transition: all 0.15s; }
+    .note-card-item:hover { background: var(--bg-subtle); }
+    .note-card-item.active { border: 2px solid var(--primary); background: var(--bg-page); }
+    .note-card-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .note-card-title { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
+    .note-card-preview { font-size: 0.76rem; color: var(--text-muted); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 6px; }
+    .note-card-date { font-size: 0.68rem; color: var(--text-light); }
+
+    .notes-editor-pane { flex: 1; display: flex; flex-direction: column; height: 100%; background: var(--bg-surface); overflow-y: auto; padding: 24px 36px; }
+    .note-editor-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .note-topic-tag { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .note-editor-actions { display: flex; align-items: center; gap: 8px; }
+    .btn-action-tool { padding: 6px 14px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius); font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+    .btn-action-tool:hover { background: var(--bg-subtle); }
+
+    .note-editor-title-input { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; border: none; outline: none; background: transparent; width: 100%; }
+
+    .note-toolbar { display: flex; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid var(--border-color); border-radius: var(--radius); background: var(--bg-page); margin-bottom: 20px; overflow-x: auto; }
+    .toolbar-tool-btn { width: 28px; height: 28px; border-radius: 4px; border: none; background: transparent; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; }
+    .toolbar-tool-btn:hover { background: var(--bg-hover); color: var(--text-main); }
+    .toolbar-divider { width: 1px; height: 18px; background: var(--border-color); margin: 0 4px; }
+
+    .note-editor-textarea {
       width: 100%;
-      height: 100%;
-    }
-
-    .notes-list-col {
-      width: 320px;
-      background: var(--bg-surface);
-      border-right: 1px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      flex-shrink: 0;
-    }
-
-    .notes-list-top {
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .notes-btn-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-tablet-notepad {
-      flex: 1;
-      height: 34px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-surface);
-      border-radius: var(--radius);
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .btn-tablet-notepad:hover {
-      background: var(--bg-subtle);
-    }
-
-    .notes-cards-scroll {
-      flex: 1;
-      overflow-y: auto;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .note-card-item {
-      padding: 12px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      background: var(--bg-surface);
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .note-card-item:hover {
-      background: var(--bg-subtle);
-    }
-
-    .note-card-item.active {
-      border: 2px solid var(--primary);
-      background: var(--bg-page);
-    }
-
-    .note-card-tag {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 4px;
-    }
-
-    .note-card-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .note-card-preview {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin-bottom: 6px;
-    }
-
-    .note-card-date {
-      font-size: 0.68rem;
-      color: var(--text-light);
-    }
-
-    /* Notes Editor Area */
-    .notes-editor-pane {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      background: var(--bg-surface);
-      overflow-y: auto;
-      padding: 24px 36px;
-    }
-
-    .note-editor-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-
-    .note-topic-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .note-editor-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-ask-tutor {
-      padding: 6px 14px;
-      background: var(--bg-surface);
+      min-height: 240px;
       border: 1px solid var(--border-color);
       border-radius: var(--radius);
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .note-editor-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .note-toolbar {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 6px 12px;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      background: var(--bg-page);
-      margin-bottom: 20px;
-      overflow-x: auto;
-    }
-
-    .toolbar-tool-btn {
-      width: 28px;
-      height: 28px;
-      border-radius: 4px;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .toolbar-tool-btn:hover {
-      background: var(--bg-hover);
-      color: var(--text-main);
-    }
-
-    .toolbar-divider {
-      width: 1px;
-      height: 18px;
-      background: var(--border-color);
-      margin: 0 4px;
-    }
-
-    .note-content-rendered {
+      padding: 12px 16px;
       font-size: 0.95rem;
-      line-height: 1.7;
+      line-height: 1.6;
+      font-family: var(--font-mono);
+      background: var(--bg-subtle);
+      outline: none;
+      resize: vertical;
+      margin-bottom: 16px;
     }
 
-    .note-content-rendered h2 {
-      margin: 24px 0 12px 0;
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-
-    .note-math-equation {
-      padding: 16px;
-      margin: 16px 0;
-      text-align: center;
-      background: var(--bg-page);
-      border-radius: var(--radius);
-      font-size: 1.1rem;
-    }
+    .note-content-rendered { font-size: 0.95rem; line-height: 1.7; border-top: 1px solid var(--border-subtle); padding-top: 20px; }
+    .note-math-equation { padding: 16px; margin: 16px 0; text-align: center; background: var(--bg-page); border-radius: var(--radius); font-size: 1.1rem; }
 
     /* ==========================================================================
        VIEW 3: Flashcard Decks View (Screenshot 2)
        ========================================================================== */
-    .flashcards-workspace-wrap {
-      display: flex;
-      width: 100%;
-      height: 100%;
-    }
+    .flashcards-workspace-wrap { display: flex; width: 100%; height: 100%; }
+    .decks-list-col { width: 300px; background: var(--bg-surface); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; height: 100%; flex-shrink: 0; }
+    .decks-header-row { padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); }
+    .decks-count-title { font-size: 0.8rem; font-weight: 700; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+    .btn-create-deck { padding: 6px 12px; background: var(--primary); color: var(--primary-fg); border: none; border-radius: var(--radius-full); font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; gap: 6px; cursor: pointer; }
 
-    .decks-list-col {
-      width: 300px;
-      background: var(--bg-surface);
-      border-right: 1px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      flex-shrink: 0;
-    }
+    .decks-scroll-list { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .deck-item-card { padding: 12px; border-radius: var(--radius); border: 1px solid var(--border-color); background: var(--bg-surface); cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: all 0.15s; }
+    .deck-item-card:hover { background: var(--bg-subtle); }
+    .deck-item-card.active { border: 2px solid var(--primary); }
+    .deck-meta-info { min-width: 0; }
+    .deck-cat-label { font-size: 0.65rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; }
+    .deck-title-text { font-size: 0.84rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .deck-badge-count { font-size: 0.7rem; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: var(--radius-full); padding: 2px 8px; color: var(--text-muted); flex-shrink: 0; }
 
-    .decks-header-row {
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border-subtle);
-    }
+    .flashcard-stage-pane { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; background: var(--bg-page); position: relative; }
+    .flashcard-status-bar { position: absolute; top: 20px; left: 30px; right: 30px; display: flex; align-items: center; justify-content: space-between; }
+    .deck-breadcrumb { font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .score-pills { display: flex; align-items: center; gap: 8px; }
+    .score-pill-green { background: var(--badge-green); color: var(--badge-green-text); font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: var(--radius-full); }
+    .score-pill-red { background: #fef2f2; color: #dc2626; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: var(--radius-full); }
 
-    .decks-count-title {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text-light);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+    .flashcard-flipper-container { width: 580px; height: 340px; perspective: 1000px; cursor: pointer; margin-bottom: 24px; }
+    .flashcard-flipper-card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+    .flashcard-flipper-card.flipped { transform: rotateY(180deg); }
 
-    .btn-create-deck {
-      padding: 6px 12px;
-      background: var(--primary);
-      color: var(--primary-fg);
-      border: none;
-      border-radius: var(--radius-full);
-      font-size: 0.78rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
+    .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--radius-lg); background: var(--bg-surface); border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; padding: 30px 40px; text-align: center; }
+    .card-face-back { transform: rotateY(180deg); background: var(--bg-surface); }
+    .card-face-context { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .card-face-prompt { font-size: 1.2rem; font-weight: 600; color: var(--text-main); line-height: 1.5; }
+    .card-face-hint { font-size: 0.72rem; font-weight: 600; color: var(--text-light); letter-spacing: 0.06em; text-transform: uppercase; }
 
-    .decks-scroll-list {
-      flex: 1;
-      overflow-y: auto;
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .deck-item-card {
-      padding: 12px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      background: var(--bg-surface);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.15s;
-    }
-
-    .deck-item-card:hover {
-      background: var(--bg-subtle);
-    }
-
-    .deck-item-card.active {
-      border: 2px solid var(--primary);
-    }
-
-    .deck-meta-info {
-      min-width: 0;
-    }
-
-    .deck-cat-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--text-light);
-      text-transform: uppercase;
-    }
-
-    .deck-title-text {
-      font-size: 0.84rem;
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .deck-badge-count {
-      font-size: 0.7rem;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-full);
-      padding: 2px 8px;
-      color: var(--text-muted);
-      flex-shrink: 0;
-    }
-
-    /* Flashcard Interactive Center Area */
-    .flashcard-stage-pane {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      background: var(--bg-page);
-      position: relative;
-    }
-
-    .flashcard-status-bar {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      right: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .deck-breadcrumb {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .score-pills {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .score-pill-green {
-      background: var(--badge-green);
-      color: var(--badge-green-text);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-    }
-
-    .score-pill-red {
-      background: #fef2f2;
-      color: #dc2626;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-    }
-
-    /* 3D Flip Card Component */
-    .flashcard-flipper-container {
-      width: 580px;
-      height: 340px;
-      perspective: 1000px;
-      cursor: pointer;
-      margin-bottom: 24px;
-    }
-
-    .flashcard-flipper-card {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-    }
-
-    .flashcard-flipper-card.flipped {
-      transform: rotateY(180deg);
-    }
-
-    .card-face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: var(--radius-lg);
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 30px 40px;
-      text-align: center;
-    }
-
-    .card-face-back {
-      transform: rotateY(180deg);
-      background: var(--bg-surface);
-    }
-
-    .card-face-context {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .card-face-prompt {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-main);
-      line-height: 1.5;
-    }
-
-    .card-face-hint {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--text-light);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .card-bottom-controls {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-arrow-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      background: var(--bg-surface);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-card-action {
-      padding: 8px 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      background: var(--bg-surface);
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-card-action.text-red {
-      color: #dc2626;
-    }
+    .card-bottom-controls { display: flex; align-items: center; gap: 12px; }
+    .nav-arrow-btn { width: 36px; height: 36px; border-radius: var(--radius); border: 1px solid var(--border-color); background: var(--bg-surface); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .btn-card-action { padding: 8px 16px; border-radius: var(--radius); border: 1px solid var(--border-color); background: var(--bg-surface); font-size: 0.8rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .btn-card-action.btn-green { background: var(--badge-green); color: var(--badge-green-text); border-color: #86efac; }
+    .btn-card-action.btn-red { background: #fef2f2; color: #dc2626; border-color: #fca5a5; }
 
     /* ==========================================================================
-       VIEW 4: Tablet Notepad View (Screenshot 1)
+       VIEW 4: Tablet Notepad Canvas View (Screenshot 1)
        ========================================================================== */
-    .notepad-canvas-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: var(--notepad-yellow);
-      overflow: hidden;
-      cursor: crosshair;
-    }
+    .notepad-canvas-wrapper { position: relative; width: 100%; height: 100%; background: var(--notepad-yellow); overflow: hidden; cursor: crosshair; }
+    .notepad-ruled-background { position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent, transparent 31px, var(--notepad-line) 31px, var(--notepad-line) 32px); pointer-events: none; }
+    .notepad-red-margin { position: absolute; top: 0; bottom: 0; left: 64px; width: 2px; background: var(--notepad-margin); pointer-events: none; }
+    #drawingCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
 
-    /* Ruled paper lines effect */
-    .notepad-ruled-background {
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 31px,
-        var(--notepad-line) 31px,
-        var(--notepad-line) 32px
-      );
-      pointer-events: none;
-    }
+    .notepad-floating-toolbar { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: rgba(17, 24, 39, 0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-full); padding: 6px 14px; display: flex; align-items: center; gap: 8px; color: white; z-index: 20; box-shadow: var(--shadow-lg); }
+    .notepad-tool-btn { width: 30px; height: 30px; border-radius: 50%; background: transparent; border: none; color: #9ca3af; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .notepad-tool-btn:hover { color: white; background: rgba(255, 255, 255, 0.1); }
+    .notepad-tool-btn.active { color: white; background: #2563eb; }
+    .notepad-color-dot { width: 14px; height: 14px; border-radius: 50%; background: #000000; border: 2px solid white; cursor: pointer; }
+    .btn-brainstorm { background: #09090b; color: white; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-full); padding: 4px 12px; font-size: 0.75rem; font-weight: 600; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+    .btn-brainstorm:hover { background: #27272a; }
 
-    .notepad-red-margin {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 64px;
-      width: 2px;
-      background: var(--notepad-margin);
-      pointer-events: none;
-    }
+    .notepad-subject-badge { position: absolute; top: 16px; left: 20px; background: white; border: 1px solid var(--border-color); border-radius: var(--radius); padding: 6px 12px; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; box-shadow: var(--shadow-sm); z-index: 20; }
+    .notepad-download-btn { position: absolute; top: 16px; right: 20px; width: 36px; height: 36px; border-radius: var(--radius); background: white; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm); z-index: 20; }
 
-    #drawingCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 5;
-    }
+    /* Floating PIP Preview */
+    .floating-pip-preview { position: fixed; bottom: 24px; right: 24px; width: 160px; height: 95px; border-radius: var(--radius); background: var(--bg-surface); border: 2px solid var(--border-color); box-shadow: var(--shadow-lg); cursor: pointer; overflow: hidden; z-index: 50; transition: transform 0.2s; }
+    .floating-pip-preview:hover { transform: scale(1.05); border-color: var(--primary); }
+    .pip-preview-inner { width: 100%; height: 100%; background: var(--notepad-yellow); display: flex; flex-direction: column; padding: 6px; font-size: 0.5rem; font-family: var(--font-hand); color: #1f2937; pointer-events: none; }
 
-    /* Top Floating Notepad Toolbar */
-    .notepad-floating-toolbar {
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(17, 24, 39, 0.9);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-full);
-      padding: 6px 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: white;
-      z-index: 20;
-      box-shadow: var(--shadow-lg);
-    }
+    /* Modals */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 100; }
+    .modal-backdrop.active { display: flex; }
+    .modal-card { width: 480px; max-width: 90vw; background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .modal-header-row { display: flex; align-items: center; justify-content: space-between; }
+    .modal-title { font-size: 1.1rem; font-weight: 700; }
+    .modal-close-btn { background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted); }
+    .modal-input { width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius); font-size: 0.85rem; outline: none; background: var(--bg-subtle); }
+    .modal-textarea { width: 100%; min-height: 90px; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius); font-size: 0.85rem; outline: none; background: var(--bg-subtle); resize: vertical; }
+    .modal-btn-submit { padding: 10px 16px; background: var(--primary); color: var(--primary-fg); border: none; border-radius: var(--radius); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
 
-    .notepad-tool-btn {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: transparent;
-      border: none;
-      color: #9ca3af;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.15s;
-    }
-
-    .notepad-tool-btn:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .notepad-tool-btn.active {
-      color: white;
-      background: #2563eb;
-    }
-
-    .notepad-color-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #000000;
-      border: 2px solid white;
-      cursor: pointer;
-    }
-
-    .btn-brainstorm {
-      background: #09090b;
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: var(--radius-full);
-      padding: 4px 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .btn-brainstorm:hover {
-      background: #27272a;
-    }
-
-    /* Left Subject Sheet Badge */
-    .notepad-subject-badge {
-      position: absolute;
-      top: 16px;
-      left: 20px;
-      background: white;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 6px 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      box-shadow: var(--shadow-sm);
-      z-index: 20;
-    }
-
-    /* Right Download Button */
-    .notepad-download-btn {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius);
-      background: white;
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      z-index: 20;
-    }
-
-    /* ==========================================================================
-       Floating Picture-in-Picture Mini-Preview (Bottom Right)
-       ========================================================================== */
-    .floating-pip-preview {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 160px;
-      height: 95px;
-      border-radius: var(--radius);
-      background: var(--bg-surface);
-      border: 2px solid var(--border-color);
-      box-shadow: var(--shadow-lg);
-      cursor: pointer;
-      overflow: hidden;
-      z-index: 50;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .floating-pip-preview:hover {
-      transform: scale(1.05);
-      border-color: var(--primary);
-    }
-
-    .pip-preview-inner {
-      width: 100%;
-      height: 100%;
-      background: var(--notepad-yellow);
-      display: flex;
-      flex-direction: column;
-      padding: 6px;
-      font-size: 0.5rem;
-      font-family: var(--font-hand);
-      color: #1f2937;
-      pointer-events: none;
-    }
-
-    .pip-formula {
-      font-size: 0.75rem;
-      font-weight: bold;
-    }
-
-    /* ==========================================================================
-       Neuro-Inclusive Adaptations
-       ========================================================================== */
-    .adhd-mode .message-body p {
-      background: rgba(37, 99, 235, 0.05);
-      border-left: 3px solid #2563eb;
-      padding: 6px 10px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-    }
-
-    .dyslexia-mode {
-      letter-spacing: 0.05em;
-      word-spacing: 0.1em;
-      line-height: 1.8;
-    }
+    /* Quiz Question Card */
+    .quiz-option-btn { width: 100%; padding: 10px 14px; text-align: left; border: 1px solid var(--border-color); border-radius: var(--radius); background: var(--bg-page); font-size: 0.85rem; cursor: pointer; transition: all 0.15s; margin-bottom: 8px; }
+    .quiz-option-btn:hover { border-color: var(--primary); background: var(--bg-subtle); }
+    .quiz-option-btn.selected { border-color: #2563eb; background: #eff6ff; font-weight: 600; }
+    .quiz-option-btn.correct { border-color: #16a34a; background: #f0fdf4; color: #16a34a; font-weight: 700; }
   </style>
 </head>
 
 <body>
 
-  <!-- ==========================================================================
-       Collapsible Left Navigation Sidebar
-       ========================================================================== -->
+  <!-- Audio Player Stream Bar -->
+  <div class="audio-player-banner" id="audioPlayerBanner">
+    <div class="audio-status-left">
+      <div class="audio-waveform-anim"></div>
+      <span id="audioStatusText">Synthesizing audio model speech...</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <button onclick="pauseResumeAudio()" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:4px 10px; border-radius:4px; cursor:pointer;" id="audioToggleBtn">Pause</button>
+      <button onclick="stopAudio()" style="background:transparent; border:none; color:#9ca3af; cursor:pointer;">Close</button>
+    </div>
+  </div>
+
+  <!-- Collapsible Left Navigation Sidebar -->
   <aside class="app-sidebar" id="appSidebar">
     <div class="sidebar-header">
       <a href="#" class="brand-group" id="brandHomeLink">
@@ -1919,7 +1039,7 @@
     </div>
 
     <div class="sidebar-content">
-      <button class="btn-upload-material" id="btnUploadMaterial">
+      <button class="btn-upload-material" onclick="openUploadModal()">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="12" y1="5" x2="12" y2="19"></line>
           <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1942,15 +1062,6 @@
             </button>
           </li>
           <li>
-            <button class="nav-item-btn" data-view="view-library">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-              </svg>
-              <span>Library</span>
-            </button>
-          </li>
-          <li>
             <button class="nav-item-btn" data-view="view-notes">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -1966,8 +1077,6 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
                 <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                <path d="M2 2l7.586 7.586"></path>
-                <circle cx="11" cy="11" r="2"></circle>
               </svg>
               <span>Notepad</span>
             </button>
@@ -1983,18 +1092,6 @@
             </button>
           </li>
           <li>
-            <button class="nav-item-btn" data-view="view-teasers">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="6" y1="12" x2="10" y2="12"></line>
-                <line x1="8" y1="10" x2="8" y2="14"></line>
-                <line x1="15" y1="13" x2="15.01" y2="13"></line>
-                <line x1="18" y1="11" x2="18.01" y2="11"></line>
-                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-              </svg>
-              <span>Brain Teasers</span>
-            </button>
-          </li>
-          <li>
             <button class="nav-item-btn" data-view="view-analytics">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -2002,15 +1099,6 @@
                 <line x1="6" y1="20" x2="6" y2="14"></line>
               </svg>
               <span>Analytics</span>
-            </button>
-          </li>
-          <li>
-            <button class="nav-item-btn" data-view="view-settings">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-              </svg>
-              <span>Settings</span>
             </button>
           </li>
         </ul>
@@ -2032,12 +1120,10 @@
     </div>
   </aside>
 
-  <!-- ==========================================================================
-       Main Application Container
-       ========================================================================== -->
+  <!-- Main Application Container -->
   <main class="app-main">
     
-    <!-- Top Navigation Bar -->
+    <!-- Top Bar -->
     <header class="app-topbar">
       <div class="topbar-left">
         <h1 class="topbar-page-title" id="pageTitleText">Chat & Study Workspace</h1>
@@ -2049,7 +1135,7 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" placeholder="Search notes, flashcards, documents, quizzes..." id="globalSearchInput" />
+          <input type="text" placeholder="Search notes, flashcards, documents, quizzes..." id="globalSearchInput" oninput="filterGlobalSearch(this.value)" />
           <span class="kbd-shortcut">cmd + K</span>
         </div>
 
@@ -2061,9 +1147,8 @@
           <span class="notification-badge">12</span>
         </button>
 
-        <!-- Neuro-Inclusion / Theme Toggle Button (Glasses Icon) -->
         <button class="topbar-icon-btn" id="themeCycleBtn" title="Theme & Reading Comfort">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="6" cy="15" r="4"></circle>
             <circle cx="18" cy="15" r="4"></circle>
             <path d="M14 15a2 2 0 0 0-4 0"></path>
@@ -2078,13 +1163,11 @@
       </div>
     </header>
 
-    <!-- ========================================================================
-         VIEW 1: Dashboard / Chat & Study Workspace (Screenshots 4 & 5)
-         ======================================================================== -->
+    <!-- VIEW 1: Dashboard (Chat & Study Workspace) -->
     <section class="view-container active" id="view-dashboard">
       <div class="workspace-cols">
 
-        <!-- Column 1: Materials & Recent Chats -->
+        <!-- Column 1: Material & Chat Library -->
         <div class="material-chat-sidebar">
           <div class="chat-sidebar-search">
             <div class="chat-search-input-wrap">
@@ -2092,19 +1175,9 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              <input type="text" placeholder="Search materials... (Ctrl+K)" />
+              <input type="text" placeholder="Search materials... (Ctrl+K)" id="chatSidebarFilterInput" oninput="filterChatList(this.value)" />
             </div>
-            <button class="icon-square-btn" title="Filter Materials">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="4" y1="21" x2="4" y2="14"></line>
-                <line x1="4" y1="10" x2="4" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12" y2="3"></line>
-                <line x1="20" y1="21" x2="20" y2="16"></line>
-                <line x1="20" y1="12" x2="20" y2="3"></line>
-              </svg>
-            </button>
-            <button class="icon-square-btn" title="Add Subject">
+            <button class="icon-square-btn" title="Add Subject" onclick="openNewChatPrompt()">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -2113,7 +1186,7 @@
           </div>
 
           <div class="new-chat-btn-wrap">
-            <button class="btn-new-chat" id="btnNewChat">
+            <button class="btn-new-chat" onclick="openNewChatPrompt()">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
               </svg>
@@ -2121,198 +1194,42 @@
             </button>
           </div>
 
-          <div class="chat-sidebar-scroll">
-            <div class="chat-list-section-title">Pinned</div>
-            
-            <div class="chat-item-card active" data-subject="Mathematics">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">Mathematics</div>
-                  <div class="chat-meta-sub">Text · 9/7/2026</div>
-                </div>
-              </div>
-              <div class="chat-item-actions">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2z"></path>
-                </svg>
-              </div>
-            </div>
-
-            <div class="chat-item-card" data-subject="Web Development">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">Web Development</div>
-                  <div class="chat-meta-sub">Text · 7/25/2026</div>
-                </div>
-              </div>
-              <div class="chat-item-actions">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2z"></path>
-                </svg>
-              </div>
-            </div>
-
-            <div class="chat-list-section-title">Recent Chats</div>
-
-            <div class="chat-item-card">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">General Chat (09:15 AM)</div>
-                  <div class="chat-meta-sub">Text · 10/21/2026</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="chat-item-card">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">I would like to study Python...</div>
-                  <div class="chat-meta-sub">Text · 9/24/2026</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="chat-item-card">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">I need to learn about matrix...</div>
-                  <div class="chat-meta-sub">Text · 9/11/2026</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="chat-item-card">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">YouTube: AI, Machine Learning...</div>
-                  <div class="chat-meta-sub">PDF · 9/11/2026</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="chat-item-card">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">https://africaprize.raeng...</div>
-                  <div class="chat-meta-sub">Link · 9/8/2026</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="chat-item-card">
-              <div class="chat-item-left">
-                <div class="chat-icon-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                  </svg>
-                </div>
-                <div class="chat-meta">
-                  <div class="chat-meta-title">n8n Zero to technical application</div>
-                  <div class="chat-meta-sub">YouTube · 9/5/2026</div>
-                </div>
-              </div>
-            </div>
+          <!-- Dynamic Chat List Rendered from Backend State -->
+          <div class="chat-sidebar-scroll" id="chatsListContainer">
+            <!-- Pinned & Recent Chats dynamically injected -->
           </div>
 
           <div class="chat-sidebar-footer">
-            <a href="#">Manage full library</a>
+            <a href="#" onclick="openUploadModal()">Manage full library</a>
           </div>
         </div>
 
-        <!-- Column 2: Center Socratic Dialogue Stream -->
+        <!-- Column 2: Center Conversation Stream -->
         <div class="workspace-center-chat">
           
-          <!-- Active Context Banner -->
           <div class="chat-stream-header">
             <div class="working-on-badge">
-              <div class="working-on-icon">M</div>
+              <div class="working-on-icon" id="workingOnIcon">M</div>
               <div>
                 <div class="working-on-title" id="activeTopicHeading">Working on: Mathematics</div>
-                <div class="working-on-sub">Grounded in Text source</div>
+                <div class="working-on-sub" id="activeGroundingSub">Grounded in Text source</div>
               </div>
             </div>
-            <button class="btn-clear-focus" id="btnClearFocus">Clear focus</button>
+            <button class="btn-clear-focus" onclick="resetActiveChatHistory()">Clear focus</button>
           </div>
 
           <!-- Quick Launch Bar -->
           <div class="quick-launch-bar">
             <span class="quick-launch-label">QUICK LAUNCH:</span>
-            <button class="quick-pill-btn" onclick="triggerQuickPill('quiz')">Material Quiz</button>
-            <button class="quick-pill-btn" onclick="triggerQuickPill('flashcards')">Flashcards Practice</button>
-            <button class="quick-pill-btn" onclick="triggerQuickPill('notes')">Resume Recent Note</button>
-            <button class="quick-pill-btn" onclick="triggerQuickPill('audio')">Listen to Notes</button>
+            <button class="quick-pill-btn" onclick="openQuizModal()">Material Quiz</button>
+            <button class="quick-pill-btn" onclick="switchView('view-flashcards')">Flashcards Practice</button>
+            <button class="quick-pill-btn" onclick="switchView('view-notes')">Resume Recent Note</button>
+            <button class="quick-pill-btn" onclick="listenToCurrentNotes()">Listen to Notes</button>
           </div>
 
-          <!-- Chat Stream Scroll Viewport -->
+          <!-- Dynamic Chat Messages Stream -->
           <div class="chat-messages-viewport" id="chatViewport">
-            
-            <!-- Default Welcome Socratic Turn -->
-            <div class="chat-bubble-row assistant-row">
-              <img src="https://purelearn.vigilance.rw/logo.png" alt="Purelearn" class="assistant-avatar" />
-              <div class="message-body">
-                <p><strong>Welcome to Purelearn AI Socratic Workspace.</strong></p>
-                <p>I am powered by an in-house PyTorch Transformer neural network engineered to scaffold your learning through guided inquiry, KaTeX mathematical derivations, and neuro-inclusive clarity.</p>
-                
-                <h4>4. Common Pitfalls, Edge Cases & Student Misconceptions</h4>
-                <p>• <strong>Forgetting the Chain Rule in Reverse (U-Substitution):</strong> When integrating an oscillating current $I(t) = 5\sin(2t)$, students often forget to divide by the inner coefficient ($2$).</p>
-                <p>• <strong>Ignoring the Constant of Integration ($+C$):</strong> When working with indefinite integrals, leaving off $+C$ loses an entire family of valid vertical shifts.</p>
-
-                <h4>5. Guided Socratic Discovery & Practice Challenge</h4>
-                <p>If we change our current function to $I(t) = 5\sin(4t)$ over the exact same time interval from $t = 0$ to $t = \pi/4$, how do you predict the total accumulated charge $Q$ will change compared to our previous result of $2.5\text{ Coulombs}$?</p>
-                <p><em>Hint: Think about how doubling the frequency compresses the wave horizontally, and what that does to the area under the curve!</em></p>
-
-                <div class="message-action-bar">
-                  <span>12:59 PM</span>
-                  <span>•</span>
-                  <a class="msg-action-link" onclick="copyMessageText(this)">Copy</a>
-                  <span>•</span>
-                  <a class="msg-action-link" onclick="triggerQuickPill('audio')">Listen to Notes</a>
-                  <span>•</span>
-                  <a class="msg-action-link" onclick="triggerQuickPill('notes')">Save as Note</a>
-                  <span>•</span>
-                  <a class="msg-action-link" onclick="triggerQuickPill('quiz')">Take Quiz</a>
-                </div>
-              </div>
-            </div>
-
+            <!-- Messages dynamically rendered -->
           </div>
 
           <!-- Bottom Chat Input Box -->
@@ -2327,29 +1244,19 @@
               
               <div class="chat-input-controls">
                 <div class="input-left-controls">
-                  <button class="input-icon-btn" title="Attach Document / Media">
+                  <button class="input-icon-btn" title="Upload Material" onclick="openUploadModal()">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
                     </svg>
                   </button>
-                  <button class="input-icon-btn" title="Study Tools Menu">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="8" y1="6" x2="21" y2="6"></line>
-                      <line x1="8" y1="12" x2="21" y2="12"></line>
-                      <line x1="8" y1="18" x2="21" y2="18"></line>
-                      <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                      <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                      <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                    </svg>
-                  </button>
 
-                  <div class="control-chip active" id="chipSocratic" title="Cycle Socratic Depth (1: Hints, 2: Guided, 3: Strict)">
+                  <div class="control-chip active" id="chipSocratic" onclick="cycleSocraticLevel()">
                     Socratic: Level 2
                   </div>
-                  <div class="control-chip" id="chipAdhd" title="Toggle ADHD Micro-Chunking">
+                  <div class="control-chip" id="chipAdhd" onclick="toggleAdhdMode()">
                     ADHD Mode
                   </div>
-                  <div class="control-chip" id="chipDyslexia" title="Toggle Dyslexia High-Contrast Clarity">
+                  <div class="control-chip" id="chipDyslexia" onclick="toggleDyslexiaMode()">
                     Dyslexia Clear
                   </div>
                   <div class="control-chip" id="chipNlpBadge" style="display:none;">
@@ -2357,7 +1264,7 @@
                   </div>
                 </div>
 
-                <button class="btn-send-message" id="btnSendChat" title="Send (Enter)">
+                <button class="btn-send-message" id="btnSendChat" onclick="sendActiveChatMessage()" title="Send (Enter)">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -2373,7 +1280,7 @@
         <div class="workspace-right-progress">
           <div class="progress-header-row">
             <span class="progress-title-label">Study Progress</span>
-            <span class="bonus-tokens-badge">+4 BONUS TOKENS</span>
+            <span class="bonus-tokens-badge" id="bonusTokensBadge">+4 BONUS TOKENS</span>
           </div>
 
           <div class="scholar-achievement-card">
@@ -2384,17 +1291,17 @@
               </svg>
             </div>
             <div class="scholar-card-title">Active Scholar</div>
-            <div class="scholar-card-sub">6 quizzes completed</div>
+            <div class="scholar-card-sub" id="quizzesCompletedSub">6 quizzes completed</div>
 
             <div class="level-streak-row">
-              <span>Scholar Level 16 <span style="font-weight:400; color:var(--text-muted); font-size:0.72rem;">(4717 XP)</span></span>
-              <span class="streak-pill">1 day streak</span>
+              <span id="scholarLevelSpan">Scholar Level 16 <span style="font-weight:400; color:var(--text-muted); font-size:0.72rem;" id="totalXpSpan">(4717 XP)</span></span>
+              <span class="streak-pill" id="streakPill">1 day streak</span>
             </div>
 
             <div class="rank-progress-bar">
-              <div class="rank-progress-fill"></div>
+              <div class="rank-progress-fill" id="rankProgressFill"></div>
             </div>
-            <div class="rank-points-text">217 / 300 XP</div>
+            <div class="rank-points-text" id="rankPointsText">217 / 300 XP</div>
 
             <div class="badges-section">
               <span>EARNED BADGES (3)</span>
@@ -2409,21 +1316,18 @@
 
           <div class="study-reminders-card">
             <div class="study-reminders-title">Study Reminders</div>
-            <ul class="study-reminders-list">
+            <ul class="study-reminders-list" id="studyRemindersList">
               <li>Test your retention on "Mathematics" with a grounded material quiz.</li>
               <li>Your 1-day study streak is active. Keep momentum going today!</li>
               <li>Only 83 XP needed to reach Scholar Level 17.</li>
             </ul>
           </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- ========================================================================
-         VIEW 2: Notes & Summaries View (Screenshot 3)
-         ======================================================================== -->
+    <!-- VIEW 2: Notes & Summaries View -->
     <section class="view-container" id="view-notes">
       <div class="notes-workspace-wrap">
         
@@ -2434,7 +1338,7 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              <input type="text" placeholder="Search notes... (Ctrl+K)" />
+              <input type="text" placeholder="Search notes... (Ctrl+K)" id="notesFilterInput" oninput="filterNotesList(this.value)" />
             </div>
             <div class="notes-btn-row">
               <button class="btn-tablet-notepad" onclick="switchView('view-notepad')">
@@ -2443,7 +1347,7 @@
                 </svg>
                 <span>Tablet Notepad</span>
               </button>
-              <button class="icon-square-btn" onclick="generateStructuredNote()" title="Synthesize New Note">
+              <button class="icon-square-btn" onclick="createNewNotePrompt()" title="Create Note">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -2452,42 +1356,31 @@
             </div>
           </div>
 
-          <div class="notes-cards-scroll">
-            <div class="note-card-item active">
-              <div class="note-card-tag">MATHEMATICS · Note</div>
-              <div class="note-card-title">Mathematics Notes</div>
-              <div class="note-card-preview">The Architecture of Continuous Change: Uniting Trigonometry and Calculus. Formally, derivative is defined as limit...</div>
-              <div class="note-card-date">Updated 9/7/2026</div>
-            </div>
-
-            <div class="note-card-item">
-              <div class="note-card-tag">ENGINEERING ENTREPRENEURSH... · Note</div>
-              <div class="note-card-title">Summary: https://africaprize.raeng.org.uk/</div>
-              <div class="note-card-preview">OVERVIEW OF THE AFRICA PRIZE FOR ENGINEERING INNOVATION. The initiative bridges the gap between lab research and scalable impact...</div>
-              <div class="note-card-date">Updated 9/8/2026</div>
-            </div>
-
-            <div class="note-card-item">
-              <div class="note-card-tag">YOUTUBE: AI, MACHINE LEARNIN... · Note</div>
-              <div class="note-card-title">YouTube: AI, Machine Learning, Deep Learning and Generative AI Explained</div>
-              <div class="note-card-preview">Welcome to your dedicated study session on the foundational architecture of modern artificial intelligence...</div>
-              <div class="note-card-date">Updated 9/11/2026</div>
-            </div>
-
-            <div class="note-card-item">
-              <div class="note-card-tag">YOUTUBE VIDEO · Note</div>
-              <div class="note-card-title">n8n - Notes on n8n</div>
-              <div class="note-card-preview">Lecture Notes: Fundamentals of Workflow Automation and Orchestration with n8n. Theory First: The Mechanics of...</div>
-              <div class="note-card-date">Updated 9/5/2026</div>
-            </div>
+          <div class="notes-cards-scroll" id="notesListContainer">
+            <!-- Notes list dynamically rendered -->
           </div>
         </div>
 
         <div class="notes-editor-pane">
           <div class="note-editor-header">
-            <div class="note-topic-tag">MATHEMATICS · Note</div>
+            <div class="note-topic-tag" id="activeNoteTopic">MATHEMATICS · Note</div>
             <div class="note-editor-actions">
-              <button class="btn-ask-tutor" onclick="switchView('view-dashboard')">
+              <button class="btn-action-tool" onclick="listenToCurrentNoteAudio()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <span>Listen</span>
+              </button>
+              <button class="btn-action-tool" onclick="saveActiveNote()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                  <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                  <polyline points="7 3 7 8 15 8"></polyline>
+                </svg>
+                <span>Save</span>
+              </button>
+              <button class="btn-action-tool" onclick="askTutorAboutActiveNote()">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
@@ -2496,71 +1389,26 @@
             </div>
           </div>
 
-          <h2 class="note-editor-title">Mathematics Notes</h2>
+          <input type="text" class="note-editor-title-input" id="noteTitleInput" value="Mathematics Notes" />
 
-          <div class="note-toolbar">
-            <button class="toolbar-tool-btn" title="Undo">↺</button>
-            <button class="toolbar-tool-btn" title="Redo">↻</button>
-            <div class="toolbar-divider"></div>
-            <button class="toolbar-tool-btn" style="font-weight:800;">B</button>
-            <button class="toolbar-tool-btn" style="font-style:italic;">I</button>
-            <button class="toolbar-tool-btn" style="text-decoration:line-through;">S</button>
-            <button class="toolbar-tool-btn">&lt;&gt;</button>
-            <div class="toolbar-divider"></div>
-            <button class="toolbar-tool-btn">H1</button>
-            <button class="toolbar-tool-btn">H2</button>
-            <button class="toolbar-tool-btn">H3</button>
-            <div class="toolbar-divider"></div>
-            <button class="toolbar-tool-btn">≡</button>
-            <button class="toolbar-tool-btn">1≡</button>
-            <button class="toolbar-tool-btn">""</button>
-            <div class="toolbar-divider"></div>
-            <button class="toolbar-tool-btn" title="Link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-              </svg>
-            </button>
-            <button class="toolbar-tool-btn">Ω</button>
-          </div>
+          <textarea class="note-editor-textarea" id="noteContentTextarea" oninput="renderNotePreview(this.value)"></textarea>
 
           <div class="note-content-rendered" id="noteRenderedContent">
-            <p>In calculus, the <strong>derivative</strong> of a function measures the instantaneous rate of change. Formally, it is defined as the limit of the average rate of change as the time interval shrinks to zero:</p>
-
-            <div class="note-math-equation">
-              $$\frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$
-            </div>
-
-            <p>When dealing with trigonometric functions like the sine wave that models our alternating electric signal, something remarkable happens. The derivative of the sine function is the cosine function:</p>
-
-            <div class="note-math-equation">
-              $$\frac{d}{dx} (\sin(x)) = \cos(x)$$
-            </div>
-
-            <p>• What does $\sin(x)$ represent? Your vertical position on the wave.</p>
-            <p>• What does $\cos(x)$ represent? Your instantaneous vertical velocity (how fast your height is changing).</p>
-
-            <h2>2. Worked Example: Analyzing a Periodic Wave</h2>
-            <p>Consider an oscillating charge function $q(t) = Q_0 \cos(\omega t)$. The instantaneous electric current is the time rate of change of charge:</p>
-            <div class="note-math-equation">
-              $$I(t) = \frac{dq}{dt} = -Q_0 \omega \sin(\omega t)$$
-            </div>
+            <!-- KaTeX Math & Markdown rendered preview -->
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ========================================================================
-         VIEW 3: Flashcard Decks View (Screenshot 2)
-         ======================================================================== -->
+    <!-- VIEW 3: Flashcard Decks View -->
     <section class="view-container" id="view-flashcards">
       <div class="flashcards-workspace-wrap">
         
         <div class="decks-list-col">
           <div class="decks-header-row">
-            <span class="decks-count-title">DECKS (9)</span>
-            <button class="btn-create-deck" onclick="generateAiFlashcards()">
+            <span class="decks-count-title" id="decksCountHeader">DECKS (4)</span>
+            <button class="btn-create-deck" onclick="generateAiFlashcardsDeck()">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -2569,59 +1417,27 @@
             </button>
           </div>
 
-          <div class="decks-scroll-list">
-            <div class="deck-item-card active">
-              <div class="deck-meta-info">
-                <div class="deck-cat-label">AI TUTORING</div>
-                <div class="deck-title-text">Summary: General Chat (09:15 AM)</div>
-              </div>
-              <span class="deck-badge-count">1 card</span>
-            </div>
-
-            <div class="deck-item-card">
-              <div class="deck-meta-info">
-                <div class="deck-cat-label">COMPUTER SCIENCE</div>
-                <div class="deck-title-text">Summary: I would like to study P...</div>
-              </div>
-              <span class="deck-badge-count">3 cards</span>
-            </div>
-
-            <div class="deck-item-card">
-              <div class="deck-meta-info">
-                <div class="deck-cat-label">ARTIFICIAL INTELLI...</div>
-                <div class="deck-title-text">Activation Functions &amp; Optimizer...</div>
-              </div>
-              <span class="deck-badge-count">6 cards</span>
-            </div>
-
-            <div class="deck-item-card">
-              <div class="deck-meta-info">
-                <div class="deck-cat-label">MATHEMATICS</div>
-                <div class="deck-title-text">Mathematics Notes</div>
-              </div>
-              <span class="deck-badge-count">18 cards</span>
-            </div>
+          <div class="decks-scroll-list" id="decksListContainer">
+            <!-- Decks list dynamically rendered -->
           </div>
         </div>
 
         <div class="flashcard-stage-pane">
           <div class="flashcard-status-bar">
-            <div class="deck-breadcrumb">
+            <div class="deck-breadcrumb" id="deckBreadcrumbText">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
               </svg>
               <span>Summary: General Chat (09:15 AM) (1/1)</span>
             </div>
             <div class="score-pills">
-              <span class="score-pill-green">0 Understood</span>
-              <span class="score-pill-red">0 Review</span>
+              <span class="score-pill-green" id="understoodCountBadge">0 Understood</span>
+              <span class="score-pill-red" id="reviewCountBadge">0 Review</span>
             </div>
           </div>
 
           <div class="flashcard-flipper-container" onclick="flipFlashcard()">
             <div class="flashcard-flipper-card" id="activeFlipperCard">
-              <!-- Front Face: Question -->
               <div class="card-face card-face-front">
                 <div class="card-face-context">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2637,7 +1453,6 @@
                 </div>
               </div>
 
-              <!-- Back Face: Answer -->
               <div class="card-face card-face-back">
                 <div class="card-face-context">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2646,7 +1461,7 @@
                   <span>ANSWER &amp; DERIVATION</span>
                 </div>
                 <div class="card-face-prompt" id="flashcardAnswerText" style="font-size:1.05rem; font-weight:400;">
-                  Gradient Descent minimizes loss $\mathcal{L}(\theta)$ by iteratively updating parameters $\theta \leftarrow \theta - \eta \nabla_\theta \mathcal{L}$.
+                  Gradient Descent minimizes loss by iteratively updating parameters.
                 </div>
                 <div class="card-face-hint">
                   <span>CLICK CARD TO FLIP BACK</span>
@@ -2657,18 +1472,16 @@
 
           <div class="card-bottom-controls">
             <button class="nav-arrow-btn" onclick="prevFlashcard()" title="Previous Card">&lt;</button>
+            <button class="btn-card-action btn-red" onclick="markCardStatus('review')">Review</button>
+            <button class="btn-card-action btn-green" onclick="markCardStatus('understood')">Understood</button>
             <button class="nav-arrow-btn" onclick="nextFlashcard()" title="Next Card">&gt;</button>
-            <button class="btn-card-action">Export Image</button>
-            <button class="btn-card-action text-red">Delete Card</button>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ========================================================================
-         VIEW 4: Tablet Notepad Canvas View (Screenshot 1)
-         ======================================================================== -->
+    <!-- VIEW 4: Tablet Notepad Canvas View -->
     <section class="view-container" id="view-notepad">
       <div class="notepad-canvas-wrapper" id="notepadWrapper">
         <div class="notepad-ruled-background"></div>
@@ -2683,7 +1496,6 @@
           </svg>
         </div>
 
-        <!-- Floating Notepad Controls Toolbar -->
         <div class="notepad-floating-toolbar">
           <button class="notepad-tool-btn active" id="toolPen" onclick="selectCanvasTool('pen')" title="Pen">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2701,7 +1513,6 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"></path>
               <path d="M22 21H7"></path>
-              <path d="m5 11 9 9"></path>
             </svg>
           </button>
           
@@ -2735,39 +1546,8 @@
       </div>
     </section>
 
-    <!-- Placeholder Views for other tabs -->
-    <section class="view-container" id="view-library">
-      <div style="padding:40px; text-align:center; color:var(--text-muted); width:100%;">
-        <h3>Study Library</h3>
-        <p style="margin-top:8px;">Access all uploaded course syllabi, textbooks, and transcripts.</p>
-      </div>
-    </section>
-
-    <section class="view-container" id="view-teasers">
-      <div style="padding:40px; text-align:center; color:var(--text-muted); width:100%;">
-        <h3>Brain Teasers</h3>
-        <p style="margin-top:8px;">Neuro-inclusive puzzle challenges grounded in your syllabus.</p>
-      </div>
-    </section>
-
-    <section class="view-container" id="view-analytics">
-      <div style="padding:40px; text-align:center; color:var(--text-muted); width:100%;">
-        <h3>Performance Analytics</h3>
-        <p style="margin-top:8px;">Active retention curves, cognitive load tracking, and XP milestones.</p>
-      </div>
-    </section>
-
-    <section class="view-container" id="view-settings">
-      <div style="padding:40px; text-align:center; color:var(--text-muted); width:100%;">
-        <h3>Settings &amp; Model Controls</h3>
-        <p style="margin-top:8px;">Adjust PyTorch inference hyperparameters, devices, and NLP sensitivity.</p>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         Floating Picture-in-Picture Mini-Preview (Bottom Right of all screens)
-         ======================================================================== -->
-    <div class="floating-pip-preview" id="floatingPipPreview" title="Click to switch to Tablet Notepad">
+    <!-- Floating PIP Preview -->
+    <div class="floating-pip-preview" id="floatingPipPreview" title="Switch to Notepad">
       <div class="pip-preview-inner">
         <div style="font-weight:bold; font-size:0.6rem; color:#dc2626;">F = m · a</div>
         <div>what is F?</div>
@@ -2779,27 +1559,82 @@
   </main>
 
   <!-- ==========================================================================
-       Interactive Frontend JavaScript
+       MODALS: Upload Material Modal & Socratic Quiz Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="uploadModalBackdrop">
+    <div class="modal-card">
+      <div class="modal-header-row">
+        <div class="modal-title">Upload Study Material</div>
+        <button class="modal-close-btn" onclick="closeUploadModal()">&times;</button>
+      </div>
+      <div>
+        <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted);">MATERIAL TYPE</label>
+        <select class="modal-input" id="uploadTypeSelect" style="margin-top:4px;">
+          <option value="Text">Direct Text Note</option>
+          <option value="Link">Web URL / Documentation</option>
+          <option value="PDF">Academic PDF Document</option>
+          <option value="YouTube">YouTube Lecture URL</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted);">TITLE</label>
+        <input type="text" class="modal-input" id="uploadTitleInput" placeholder="e.g. Maxwell's Electromagnetic Equations" style="margin-top:4px;" />
+      </div>
+      <div>
+        <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted);">URL OR CONTENT</label>
+        <textarea class="modal-textarea" id="uploadContentInput" placeholder="Paste link (https://...) or raw curriculum theory text..." style="margin-top:4px;"></textarea>
+      </div>
+      <button class="modal-btn-submit" onclick="submitMaterialUpload()">Ingest &amp; Synthesize with Socratic AI</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="quizModalBackdrop">
+    <div class="modal-card" style="width:560px;">
+      <div class="modal-header-row">
+        <div class="modal-title" id="quizModalTitle">Grounded Socratic Quiz</div>
+        <button class="modal-close-btn" onclick="closeQuizModal()">&times;</button>
+      </div>
+      <div id="quizContainer">
+        <!-- Rendered Quiz questions -->
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button class="modal-btn-submit" onclick="submitQuizAnswers()">Submit &amp; Claim XP</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="globalAudioPlayer" style="display:none;"></audio>
+
+  <!-- ==========================================================================
+       Interactive Application Logic
        ========================================================================== -->
   <script>
     const API_BASE = window.location.origin;
 
-    let currentSocraticLevel = 2;
-    let isAdhdMode = false;
-    let isDyslexiaMode = false;
-    let isBionicMode = false;
-    let chatHistory = [];
+    // State Variables
+    let workspaceData = null;
+    let activeChatId = "chat-math-1";
+    let activeNoteId = "note-math-1";
+    let activeDeckId = "deck-math-1";
+    let currentCardIndex = 0;
+    let isFlipped = false;
+    let socraticLevel = 2;
+    let adhdMode = false;
+    let dyslexiaMode = false;
 
-    // --- Tab / View Switching ---
+    // Audio State
+    const audioElement = document.getElementById("globalAudioPlayer");
+    const audioBanner = document.getElementById("audioPlayerBanner");
+    const audioStatusText = document.getElementById("audioStatusText");
+    const audioToggleBtn = document.getElementById("audioToggleBtn");
+
+    // --- Tab Switching ---
     const pageTitles = {
       "view-dashboard": "Chat & Study Workspace",
       "view-notes": "Notes & Summaries",
       "view-flashcards": "Flashcard Decks",
       "view-notepad": "Notepad",
-      "view-library": "Study Library",
-      "view-teasers": "Brain Teasers",
-      "view-analytics": "Learning Analytics",
-      "view-settings": "Settings"
+      "view-analytics": "Learning Analytics"
     };
 
     function switchView(targetViewId) {
@@ -2812,8 +1647,7 @@
       const navBtn = document.querySelector(`.nav-item-btn[data-view="${targetViewId}"]`);
       if (navBtn) navBtn.classList.add("active");
 
-      const title = pageTitles[targetViewId] || "Purelearn AI Workspace";
-      document.getElementById("pageTitleText").innerText = title;
+      document.getElementById("pageTitleText").innerText = pageTitles[targetViewId] || "Purelearn AI Workspace";
 
       if (targetViewId === "view-notepad") {
         initCanvasDimensions();
@@ -2829,59 +1663,26 @@
     });
 
     document.getElementById("floatingPipPreview").addEventListener("click", () => {
-      const activeView = document.querySelector(".view-container.active");
-      if (activeView && activeView.id === "view-notepad") {
-        switchView("view-dashboard");
-      } else {
-        switchView("view-notepad");
-      }
+      const active = document.querySelector(".view-container.active");
+      switchView(active && active.id === "view-notepad" ? "view-dashboard" : "view-notepad");
     });
 
-    // --- Sidebar Collapse/Expand Toggle ---
-    const sidebar = document.getElementById("appSidebar");
     document.getElementById("sidebarToggleBtn").addEventListener("click", () => {
-      sidebar.classList.toggle("collapsed");
+      document.getElementById("appSidebar").classList.toggle("collapsed");
     });
 
-    // --- Theme & Reading Comfort Modes ---
+    // --- Themes ---
     const themes = ["light", "dark", "low-light"];
     let currentThemeIndex = 0;
-
-    function applyTheme(theme) {
-      document.documentElement.classList.remove("dark", "low-light");
-      if (theme !== "light") {
-        document.documentElement.classList.add(theme);
-      }
-      localStorage.setItem("purelearn-theme", theme);
-    }
-
     document.getElementById("themeCycleBtn").addEventListener("click", () => {
       currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-      applyTheme(themes[currentThemeIndex]);
+      const theme = themes[currentThemeIndex];
+      document.documentElement.classList.remove("dark", "low-light");
+      if (theme !== "light") document.documentElement.classList.add(theme);
+      localStorage.setItem("purelearn-theme", theme);
     });
 
-    // --- Control Chips (Socratic Level, ADHD, Dyslexia) ---
-    const chipSocratic = document.getElementById("chipSocratic");
-    chipSocratic.addEventListener("click", () => {
-      currentSocraticLevel = (currentSocraticLevel % 3) + 1;
-      chipSocratic.innerText = `Socratic: Level ${currentSocraticLevel}`;
-    });
-
-    const chipAdhd = document.getElementById("chipAdhd");
-    chipAdhd.addEventListener("click", () => {
-      isAdhdMode = !isAdhdMode;
-      chipAdhd.classList.toggle("active", isAdhdMode);
-      document.body.classList.toggle("adhd-mode", isAdhdMode);
-    });
-
-    const chipDyslexia = document.getElementById("chipDyslexia");
-    chipDyslexia.addEventListener("click", () => {
-      isDyslexiaMode = !isDyslexiaMode;
-      chipDyslexia.classList.toggle("active", isDyslexiaMode);
-      document.body.classList.toggle("dyslexia-mode", isDyslexiaMode);
-    });
-
-    // --- Math Equation KaTeX Auto-Render ---
+    // --- Math Rendering ---
     function renderMath() {
       if (window.renderMathInElement) {
         renderMathInElement(document.body, {
@@ -2896,74 +1697,135 @@
       }
     }
 
-    // --- Chat Inference & Streaming ---
-    const chatInput = document.getElementById("userChatInput");
-    const btnSend = document.getElementById("btnSendChat");
-    const chatViewport = document.getElementById("chatViewport");
-
-    async function handleSend() {
-      const text = chatInput.value.trim();
-      if (!text) return;
-
-      appendChatMessage("user", text);
-      chatInput.value = "";
-      btnSend.disabled = true;
-
-      chatHistory.push({ role: "user", content: text });
-
-      // Create Assistant bubble with streaming support
-      const assistantBubble = appendChatMessage("assistant", "Thinking...");
-
+    // --- Load Workspace Data from Server ---
+    async function fetchWorkspaceData() {
       try {
-        const response = await fetch(`${API_BASE}/api/chat`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            messages: chatHistory,
-            socratic_level: currentSocraticLevel,
-            adhd_mode: isAdhdMode,
-            dyslexia_mode: isDyslexiaMode,
-            bionic_reading: isBionicMode,
-            stream: false
-          })
-        });
-
-        if (!response.ok) {
-          throw new Error(`API error: ${response.status}`);
-        }
-
-        const data = await response.json();
-        const reply = data.response || "No response received.";
-        
-        chatHistory.push({ role: "assistant", content: reply });
-        assistantBubble.innerHTML = window.marked ? marked.parse(reply) : reply;
-
-        // Show NLP Affect Indicator if available
-        if (data.human_adaptation) {
-          const affect = data.human_adaptation.primary_affect || "Inquisitive";
-          const badge = document.getElementById("chipNlpBadge");
-          badge.style.display = "inline-flex";
-          badge.innerText = `Affect: ${affect.charAt(0).toUpperCase() + affect.slice(1)}`;
-        }
-
-        renderMath();
-      } catch (err) {
-        assistantBubble.innerHTML = `<span style="color:#ef4444;">Could not connect to model engine: ${err.message}</span>`;
-      } finally {
-        btnSend.disabled = false;
-        chatViewport.scrollTop = chatViewport.scrollHeight;
+        const res = await fetch(`${API_BASE}/api/workspace/data`);
+        if (!res.ok) throw new Error("Could not load workspace data");
+        workspaceData = await res.json();
+        renderWorkspaceUI();
+      } catch (e) {
+        console.error("Workspace fetch error:", e);
       }
     }
 
-    btnSend.addEventListener("click", handleSend);
-    chatInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        handleSend();
-      }
-    });
+    function renderWorkspaceUI() {
+      if (!workspaceData) return;
 
-    function appendChatMessage(role, text) {
+      renderTelemetry(workspaceData.telemetry);
+      renderChatsSidebar(workspaceData.chats);
+      loadActiveChat(activeChatId);
+      renderNotesList(workspaceData.notes);
+      loadActiveNote(activeNoteId);
+      renderDecksList(workspaceData.decks);
+      loadActiveDeck(activeDeckId);
+      renderMath();
+    }
+
+    // --- Telemetry Display ---
+    function renderTelemetry(t) {
+      if (!t) return;
+      document.getElementById("bonusTokensBadge").innerText = `+${t.bonus_tokens || 4} BONUS TOKENS`;
+      document.getElementById("quizzesCompletedSub").innerText = `${t.quizzes_completed || 6} quizzes completed`;
+      document.getElementById("scholarLevelSpan").innerHTML = `Scholar Level ${t.scholar_level || 16} <span style="font-weight:400; color:var(--text-muted); font-size:0.72rem;">(${t.total_xp || 4717} XP)</span>`;
+      document.getElementById("streakPill").innerText = `${t.streak_days || 1} day streak`;
+      
+      const pct = Math.min(100, Math.round(((t.xp_progress || 217) / 300) * 100));
+      document.getElementById("rankProgressFill").style.width = `${pct}%`;
+      document.getElementById("rankPointsText").innerText = `${t.xp_progress || 217} / 300 XP`;
+
+      if (t.reminders) {
+        document.getElementById("studyRemindersList").innerHTML = t.reminders.map(r => `<li>${r}</li>`).join("");
+      }
+    }
+
+    // --- Chats Sidebar Rendering ---
+    function renderChatsSidebar(chats) {
+      const container = document.getElementById("chatsListContainer");
+      if (!container || !chats) return;
+
+      const pinned = chats.filter(c => c.pinned);
+      const recent = chats.filter(c => !c.pinned);
+
+      let html = `<div class="chat-list-section-title">Pinned</div>`;
+      html += pinned.map(c => makeChatCardHtml(c)).join("");
+
+      html += `<div class="chat-list-section-title" style="margin-top:12px;">Recent Chats</div>`;
+      html += recent.map(c => makeChatCardHtml(c)).join("");
+
+      container.innerHTML = html;
+    }
+
+    function makeChatCardHtml(c) {
+      const isActive = c.id === activeChatId;
+      const icon = c.type === "PDF" ? `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        </svg>
+      ` : c.type === "Link" ? `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      ` : c.type === "YouTube" ? `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      ` : `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+        </svg>
+      `;
+
+      return `
+        <div class="chat-item-card ${isActive ? 'active' : ''}" onclick="selectChat('${c.id}')">
+          <div class="chat-item-left">
+            <div class="chat-icon-box">${icon}</div>
+            <div class="chat-meta">
+              <div class="chat-meta-title">${escapeHtml(c.title)}</div>
+              <div class="chat-meta-sub">${c.type} · ${c.date}</div>
+            </div>
+          </div>
+          ${c.pinned ? `
+            <div class="chat-item-actions">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2z"></path>
+              </svg>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    function selectChat(chatId) {
+      activeChatId = chatId;
+      document.querySelectorAll(".chat-item-card").forEach(el => el.classList.remove("active"));
+      renderChatsSidebar(workspaceData.chats);
+      loadActiveChat(chatId);
+      switchView("view-dashboard");
+    }
+
+    function loadActiveChat(chatId) {
+      if (!workspaceData) return;
+      const chat = workspaceData.chats.find(c => c.id === chatId) || workspaceData.chats[0];
+      if (!chat) return;
+
+      document.getElementById("workingOnIcon").innerText = chat.subject.charAt(0).toUpperCase();
+      document.getElementById("activeTopicHeading").innerText = `Working on: ${chat.title}`;
+      document.getElementById("activeGroundingSub").innerText = chat.grounding || `Grounded in ${chat.type} source`;
+
+      const viewport = document.getElementById("chatViewport");
+      viewport.innerHTML = "";
+
+      chat.messages.forEach(m => {
+        appendChatMessageNode(m.role, m.content, m.timestamp);
+      });
+      renderMath();
+    }
+
+    function appendChatMessageNode(role, content, timestamp = "Just now") {
+      const viewport = document.getElementById("chatViewport");
       const row = document.createElement("div");
       row.className = `chat-bubble-row ${role}-row`;
 
@@ -2971,140 +1833,474 @@
         row.innerHTML = `
           <img src="https://purelearn.vigilance.rw/logo.png" alt="Purelearn" class="assistant-avatar" />
           <div class="message-body">
-            <div>${window.marked ? marked.parse(text) : text}</div>
+            <div>${window.marked ? marked.parse(content) : content}</div>
             <div class="message-action-bar">
-              <span>Just now</span>
+              <span>${timestamp}</span>
               <span>•</span>
               <a class="msg-action-link" onclick="copyMessageText(this)">Copy</a>
               <span>•</span>
-              <a class="msg-action-link" onclick="triggerQuickPill('notes')">Save as Note</a>
+              <a class="msg-action-link" onclick="listenToText('${escapeAttribute(content)}')">Listen to Notes</a>
+              <span>•</span>
+              <a class="msg-action-link" onclick="saveAsNoteFromChat('${escapeAttribute(content)}')">Save as Note</a>
+              <span>•</span>
+              <a class="msg-action-link" onclick="openQuizModal()">Take Quiz</a>
             </div>
           </div>
         `;
       } else {
         row.innerHTML = `
           <div class="message-body">
-            <p>${escapeHtml(text)}</p>
+            <p>${escapeHtml(content)}</p>
           </div>
         `;
       }
 
-      chatViewport.appendChild(row);
-      chatViewport.scrollTop = chatViewport.scrollHeight;
-      renderMath();
+      viewport.appendChild(row);
+      viewport.scrollTop = viewport.scrollHeight;
       return row.querySelector(".message-body > div");
     }
 
-    function escapeHtml(str) {
-      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
+    // --- Send Chat Message to Backend ---
+    async function sendActiveChatMessage() {
+      const input = document.getElementById("userChatInput");
+      const text = input.value.trim();
+      if (!text) return;
 
-    function copyMessageText(el) {
-      const text = el.closest(".message-body").innerText;
-      navigator.clipboard.writeText(text);
-      el.innerText = "Copied!";
-      setTimeout(() => el.innerText = "Copy", 1500);
-    }
+      input.value = "";
+      document.getElementById("btnSendChat").disabled = true;
 
-    function triggerQuickPill(type) {
-      if (type === "quiz") {
-        chatInput.value = "@quiz Generate a quick Socratic practice quiz on this concept.";
-      } else if (type === "flashcards") {
-        switchView("view-flashcards");
-        generateAiFlashcards();
-        return;
-      } else if (type === "notes") {
-        switchView("view-notes");
-        generateStructuredNote();
-        return;
-      } else if (type === "audio") {
-        alert("Audio synthesis grounded in text transcript.");
-        return;
+      appendChatMessageNode("user", text);
+
+      const chat = workspaceData.chats.find(c => c.id === activeChatId);
+      const history = chat ? chat.messages.map(m => ({ role: m.role, content: m.content })) : [];
+      history.push({ role: "user", content: text });
+
+      const thinkingNode = appendChatMessageNode("assistant", "Thinking with Socratic inquiry...");
+
+      try {
+        const res = await fetch(`${API_BASE}/api/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: activeChatId,
+            messages: history,
+            socratic_level: socraticLevel,
+            adhd_mode: adhdMode,
+            dyslexia_mode: dyslexiaMode
+          })
+        });
+
+        if (!res.ok) throw new Error(`API error ${res.status}`);
+        const data = await res.json();
+        const reply = data.response || "No response received.";
+
+        thinkingNode.innerHTML = window.marked ? marked.parse(reply) : reply;
+
+        // Update local session
+        if (chat) {
+          chat.messages.push({ role: "user", content: text, timestamp: "Just now" });
+          chat.messages.push({ role: "assistant", content: reply, timestamp: "Just now" });
+        }
+
+        if (data.telemetry) {
+          workspaceData.telemetry = data.telemetry;
+          renderTelemetry(data.telemetry);
+        }
+
+        renderMath();
+      } catch (err) {
+        thinkingNode.innerHTML = `<span style="color:#ef4444;">Inference error: ${err.message}</span>`;
+      } finally {
+        document.getElementById("btnSendChat").disabled = false;
       }
-      handleSend();
     }
 
-    // --- Interactive Flashcards ---
-    let isFlipped = false;
-    function flipFlashcard() {
-      const card = document.getElementById("activeFlipperCard");
-      isFlipped = !isFlipped;
-      card.classList.toggle("flipped", isFlipped);
-    }
-
-    const demoCards = [
-      {
-        q: "What is the core principle of optimization in Artificial Intelligence and Neural Networks?",
-        a: "Gradient Descent minimizes loss $\\mathcal{L}(\\theta)$ by iteratively updating parameters: $\\theta \\leftarrow \\theta - \\eta \\nabla_\\theta \\mathcal{L}$."
-      },
-      {
-        q: "State Newton's Second Law of Motion in both scalar and differential form.",
-        a: "Scalar: $F = m \\cdot a$. Differential Form: $F = \\frac{dp}{dt} = m \\frac{d^2 x}{dt^2}$ where $p$ is momentum."
-      },
-      {
-        q: "What is the Product Rule for differentiating two functions $u(x)$ and $v(x)$?",
-        a: "$$\\frac{d}{dx}[u \\cdot v] = u' \\cdot v + u \\cdot v'$$"
+    document.getElementById("userChatInput").addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendActiveChatMessage();
       }
-    ];
-    let currentCardIndex = 0;
+    });
 
-    function renderCurrentCard() {
-      const card = demoCards[currentCardIndex];
-      document.getElementById("flashcardQuestionText").innerHTML = card.q;
-      document.getElementById("flashcardAnswerText").innerHTML = card.a;
+    // --- Audio Models Speech Synthesis ---
+    async function listenToText(text) {
+      if (!text) return;
+      audioBanner.classList.add("active");
+      audioStatusText.innerText = "Synthesizing audio with speech models...";
+      audioToggleBtn.innerText = "Pause";
+
+      try {
+        const res = await fetch(`${API_BASE}/api/audio/synthesize`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: text })
+        });
+
+        if (!res.ok) throw new Error("Backend speech synthesis failed");
+        const blob = await res.blob();
+        const audioUrl = URL.createObjectURL(blob);
+
+        audioElement.src = audioUrl;
+        audioElement.play();
+        audioStatusText.innerText = "Playing Socratic audio narration...";
+
+        audioElement.onended = () => {
+          audioBanner.classList.remove("active");
+        };
+      } catch (e) {
+        // Fallback to browser Web Speech API
+        console.warn("Falling back to Web Speech:", e);
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const cleanText = text.replace(/<\|[^>]+>/g, '').replace(/[*#`_$\\]/g, ' ');
+          const utterance = new SpeechSynthesisUtterance(cleanText);
+          utterance.rate = 1.0;
+          utterance.onend = () => audioBanner.classList.remove("active");
+          window.speechSynthesis.speak(utterance);
+          audioStatusText.innerText = "Playing via SpeechSynthesis...";
+        } else {
+          audioStatusText.innerText = "Speech playback unavailable.";
+        }
+      }
+    }
+
+    function listenToCurrentNotes() {
+      const chat = workspaceData.chats.find(c => c.id === activeChatId);
+      const lastAssistant = chat && [...chat.messages].reverse().find(m => m.role === "assistant");
+      if (lastAssistant) {
+        listenToText(lastAssistant.content);
+      } else {
+        listenToText("Welcome to Purelearn AI Socratic Workspace.");
+      }
+    }
+
+    function pauseResumeAudio() {
+      if (audioElement.src) {
+        if (audioElement.paused) {
+          audioElement.play();
+          audioToggleBtn.innerText = "Pause";
+        } else {
+          audioElement.pause();
+          audioToggleBtn.innerText = "Resume";
+        }
+      } else if (window.speechSynthesis) {
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+          audioToggleBtn.innerText = "Pause";
+        } else {
+          window.speechSynthesis.pause();
+          audioToggleBtn.innerText = "Resume";
+        }
+      }
+    }
+
+    function stopAudio() {
+      if (audioElement) { audioElement.pause(); audioElement.src = ""; }
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      audioBanner.classList.remove("active");
+    }
+
+    // --- Notes Management ---
+    function renderNotesList(notes) {
+      const container = document.getElementById("notesListContainer");
+      if (!container || !notes) return;
+      container.innerHTML = notes.map(n => `
+        <div class="note-card-item ${n.id === activeNoteId ? 'active' : ''}" onclick="selectNote('${n.id}')">
+          <div class="note-card-tag">${escapeHtml(n.topic)} · Note</div>
+          <div class="note-card-title">${escapeHtml(n.title)}</div>
+          <div class="note-card-preview">${escapeHtml(n.content.slice(0, 100))}...</div>
+          <div class="note-card-date">Updated ${n.updated || 'Recently'}</div>
+        </div>
+      `).join("");
+    }
+
+    function selectNote(noteId) {
+      activeNoteId = noteId;
+      renderNotesList(workspaceData.notes);
+      loadActiveNote(noteId);
+    }
+
+    function loadActiveNote(noteId) {
+      if (!workspaceData) return;
+      const note = workspaceData.notes.find(n => n.id === noteId) || workspaceData.notes[0];
+      if (!note) return;
+
+      document.getElementById("activeNoteTopic").innerText = `${note.topic} · Note`;
+      document.getElementById("noteTitleInput").value = note.title;
+      document.getElementById("noteContentTextarea").value = note.content;
+      renderNotePreview(note.content);
+    }
+
+    function renderNotePreview(content) {
+      document.getElementById("noteRenderedContent").innerHTML = window.marked ? marked.parse(content) : content;
+      renderMath();
+    }
+
+    async function saveActiveNote() {
+      const title = document.getElementById("noteTitleInput").value.trim();
+      const content = document.getElementById("noteContentTextarea").value.trim();
+      const note = workspaceData.notes.find(n => n.id === activeNoteId);
+      const topic = note ? note.topic : "STUDY NOTE";
+
+      try {
+        const res = await fetch(`${API_BASE}/api/notes`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: activeNoteId, title: title, content: content, topic: topic })
+        });
+        const saved = await res.json();
+        if (note) { note.title = title; note.content = content; }
+        renderNotesList(workspaceData.notes);
+        alert("Note saved successfully!");
+      } catch (e) {
+        alert("Failed to save note: " + e.message);
+      }
+    }
+
+    function listenToCurrentNoteAudio() {
+      const content = document.getElementById("noteContentTextarea").value;
+      listenToText(content);
+    }
+
+    function askTutorAboutActiveNote() {
+      const title = document.getElementById("noteTitleInput").value;
+      switchView("view-dashboard");
+      document.getElementById("userChatInput").value = `Can you break down the core principles of "${title}" with step-by-step Socratic inquiry?`;
+      sendActiveChatMessage();
+    }
+
+    function saveAsNoteFromChat(content) {
+      const chat = workspaceData.chats.find(c => c.id === activeChatId);
+      const title = chat ? `${chat.title} Socratic Summary` : "Study Summary";
+      workspaceData.notes.unshift({
+        id: `note-${Date.now()}`,
+        topic: chat ? chat.subject.toUpperCase() : "GENERAL",
+        title: title,
+        updated: "Today",
+        content: content
+      });
+      renderNotesList(workspaceData.notes);
+      alert("Saved to Notes!");
+    }
+
+    // --- Flashcards Decks ---
+    function renderDecksList(decks) {
+      const container = document.getElementById("decksListContainer");
+      if (!container || !decks) return;
+      document.getElementById("decksCountHeader").innerText = `DECKS (${decks.length})`;
+      container.innerHTML = decks.map(d => `
+        <div class="deck-item-card ${d.id === activeDeckId ? 'active' : ''}" onclick="selectDeck('${d.id}')">
+          <div class="deck-meta-info">
+            <div class="deck-cat-label">${escapeHtml(d.category)}</div>
+            <div class="deck-title-text">${escapeHtml(d.title)}</div>
+          </div>
+          <span class="deck-badge-count">${d.cards ? d.cards.length : 0} cards</span>
+        </div>
+      `).join("");
+    }
+
+    function selectDeck(deckId) {
+      activeDeckId = deckId;
+      currentCardIndex = 0;
+      renderDecksList(workspaceData.decks);
+      loadActiveDeck(deckId);
+    }
+
+    function loadActiveDeck(deckId) {
+      if (!workspaceData) return;
+      const deck = workspaceData.decks.find(d => d.id === deckId) || workspaceData.decks[0];
+      if (!deck || !deck.cards || deck.cards.length === 0) return;
+
+      document.getElementById("deckBreadcrumbText").innerHTML = `
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        </svg>
+        <span>${escapeHtml(deck.title)} (${currentCardIndex + 1}/${deck.cards.length})</span>
+      `;
+
+      const understood = deck.cards.filter(c => c.status === "understood").length;
+      const review = deck.cards.filter(c => c.status === "review").length;
+      document.getElementById("understoodCountBadge").innerText = `${understood} Understood`;
+      document.getElementById("reviewCountBadge").innerText = `${review} Review`;
+
+      const card = deck.cards[currentCardIndex];
+      document.getElementById("flashcardQuestionText").innerHTML = window.marked ? marked.parse(card.question) : card.question;
+      document.getElementById("flashcardAnswerText").innerHTML = window.marked ? marked.parse(card.answer) : card.answer;
+      
       isFlipped = false;
       document.getElementById("activeFlipperCard").classList.remove("flipped");
       renderMath();
     }
 
+    function flipFlashcard() {
+      isFlipped = !isFlipped;
+      document.getElementById("activeFlipperCard").classList.toggle("flipped", isFlipped);
+    }
+
     function nextFlashcard() {
-      currentCardIndex = (currentCardIndex + 1) % demoCards.length;
-      renderCurrentCard();
+      const deck = workspaceData.decks.find(d => d.id === activeDeckId);
+      if (!deck || !deck.cards) return;
+      currentCardIndex = (currentCardIndex + 1) % deck.cards.length;
+      loadActiveDeck(activeDeckId);
     }
 
     function prevFlashcard() {
-      currentCardIndex = (currentCardIndex - 1 + demoCards.length) % demoCards.length;
-      renderCurrentCard();
+      const deck = workspaceData.decks.find(d => d.id === activeDeckId);
+      if (!deck || !deck.cards) return;
+      currentCardIndex = (currentCardIndex - 1 + deck.cards.length) % deck.cards.length;
+      loadActiveDeck(activeDeckId);
     }
 
-    async function generateAiFlashcards() {
+    async function markCardStatus(status) {
+      const deck = workspaceData.decks.find(d => d.id === activeDeckId);
+      if (!deck || !deck.cards) return;
+      const card = deck.cards[currentCardIndex];
+      card.status = status;
+
+      try {
+        await fetch(`${API_BASE}/api/flashcards/review`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ card_id: card.id, status: status })
+        });
+      } catch (e) {
+        console.warn("Status update sync failed:", e);
+      }
+      nextFlashcard();
+    }
+
+    async function generateAiFlashcardsDeck() {
+      const chat = workspaceData.chats.find(c => c.id === activeChatId);
+      const topic = chat ? chat.title : "Calculus and Physics";
       try {
         const res = await fetch(`${API_BASE}/api/flashcards`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ content: "Calculus and Physics Newton Laws", num_cards: 3 })
+          body: JSON.stringify({ content: topic, num_cards: 4 })
         });
         const data = await res.json();
-        if (data.flashcards && data.flashcards.length > 0) {
-          demoCards.length = 0;
-          data.flashcards.forEach(c => demoCards.push({ q: c.question, a: c.answer }));
-          currentCardIndex = 0;
-          renderCurrentCard();
+        if (data.deck) {
+          workspaceData.decks.unshift(data.deck);
+          selectDeck(data.deck.id);
         }
       } catch (e) {
-        console.warn("Using offline cards:", e);
+        alert("Deck generation error: " + e.message);
       }
     }
 
-    // --- Notes Generator ---
-    async function generateStructuredNote() {
+    // --- Upload Material Modal ---
+    function openUploadModal() {
+      document.getElementById("uploadModalBackdrop").classList.add("active");
+    }
+
+    function closeUploadModal() {
+      document.getElementById("uploadModalBackdrop").classList.remove("active");
+    }
+
+    async function submitMaterialUpload() {
+      const type = document.getElementById("uploadTypeSelect").value;
+      const title = document.getElementById("uploadTitleInput").value.trim();
+      const content = document.getElementById("uploadContentInput").value.trim();
+
+      if (!title) { alert("Please provide a title"); return; }
+
+      const isUrl = content.startsWith("http://") || content.startsWith("https://");
       try {
-        const res = await fetch(`${API_BASE}/api/study-notes`, {
+        const res = await fetch(`${API_BASE}/api/materials/upload`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ content: "Calculus and Periodic Wave Motion", adhd_mode: isAdhdMode })
+          body: JSON.stringify({
+            title: title,
+            type: type,
+            url: isUrl ? content : "",
+            content: !isUrl ? content : ""
+          })
         });
         const data = await res.json();
-        if (data.notes_markdown) {
-          document.getElementById("noteRenderedContent").innerHTML = marked.parse(data.notes_markdown);
-          renderMath();
-        }
+        closeUploadModal();
+        await fetchWorkspaceData();
+        if (data.chat) selectChat(data.chat.id);
+        alert(data.message || "Material uploaded and synthesized!");
       } catch (e) {
-        console.warn("Note generation error:", e);
+        alert("Upload error: " + e.message);
       }
     }
 
-    // --- Tablet Notepad Canvas (Screenshot 1) ---
+    // --- Quiz Modal ---
+    let currentQuizQuestions = [];
+    let selectedQuizAnswers = [null, null, null];
+
+    async function openQuizModal() {
+      const chat = workspaceData.chats.find(c => c.id === activeChatId);
+      const topic = chat ? chat.title : "Mathematics";
+
+      document.getElementById("quizModalTitle").innerText = `Grounded Socratic Quiz: ${topic}`;
+      document.getElementById("quizModalBackdrop").classList.add("active");
+      document.getElementById("quizContainer").innerHTML = "<div>Synthesizing grounded questions...</div>";
+
+      try {
+        const res = await fetch(`${API_BASE}/api/quiz/generate?topic=${encodeURIComponent(topic)}`);
+        const data = await res.json();
+        currentQuizQuestions = data.questions || [];
+        selectedQuizAnswers = currentQuizQuestions.map(() => 1); // default selection
+        renderQuizModalQuestions();
+      } catch (e) {
+        document.getElementById("quizContainer").innerHTML = `<div>Error generating quiz: ${e.message}</div>`;
+      }
+    }
+
+    function closeQuizModal() {
+      document.getElementById("quizModalBackdrop").classList.remove("active");
+    }
+
+    function renderQuizModalQuestions() {
+      const container = document.getElementById("quizContainer");
+      container.innerHTML = currentQuizQuestions.map((q, qIdx) => `
+        <div style="margin-bottom:18px;">
+          <div style="font-weight:700; font-size:0.9rem; margin-bottom:8px;">${qIdx + 1}. ${q.prompt}</div>
+          <div>
+            ${q.options.map((opt, optIdx) => `
+              <button 
+                class="quiz-option-btn ${selectedQuizAnswers[qIdx] === optIdx ? 'selected' : ''}" 
+                onclick="selectQuizOption(${qIdx}, ${optIdx})"
+              >
+                ${opt}
+              </button>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+      renderMath();
+    }
+
+    function selectQuizOption(qIdx, optIdx) {
+      selectedQuizAnswers[qIdx] = optIdx;
+      renderQuizModalQuestions();
+    }
+
+    async function submitQuizAnswers() {
+      const chat = workspaceData.chats.find(c => c.id === activeChatId);
+      const topic = chat ? chat.title : "Mathematics";
+
+      try {
+        const res = await fetch(`${API_BASE}/api/quiz/submit`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ answers: selectedQuizAnswers, topic: topic })
+        });
+        const data = await res.json();
+        closeQuizModal();
+        if (data.telemetry) {
+          workspaceData.telemetry = data.telemetry;
+          renderTelemetry(data.telemetry);
+        }
+        alert(data.message || "Quiz submitted! +50 XP awarded!");
+      } catch (e) {
+        alert("Quiz submission error: " + e.message);
+      }
+    }
+
+    // --- Tablet Notepad Canvas ---
     const canvas = document.getElementById("drawingCanvas");
     const ctx = canvas.getContext("2d");
     let isDrawing = false;
@@ -3139,14 +2335,14 @@
       return { x: clientX - rect.left, y: clientY - rect.top };
     }
 
-    function startDraw(e) {
+    canvas.addEventListener("mousedown", (e) => {
       isDrawing = true;
       const pos = getCanvasPos(e);
       ctx.beginPath();
       ctx.moveTo(pos.x, pos.y);
-    }
+    });
 
-    function moveDraw(e) {
+    canvas.addEventListener("mousemove", (e) => {
       if (!isDrawing) return;
       const pos = getCanvasPos(e);
       ctx.lineCap = "round";
@@ -3167,25 +2363,16 @@
 
       ctx.lineTo(pos.x, pos.y);
       ctx.stroke();
-    }
+    });
 
-    function stopDraw() {
-      isDrawing = false;
-    }
+    canvas.addEventListener("mouseup", () => isDrawing = false);
+    canvas.addEventListener("mouseleave", () => isDrawing = false);
 
-    canvas.addEventListener("mousedown", startDraw);
-    canvas.addEventListener("mousemove", moveDraw);
-    canvas.addEventListener("mouseup", stopDraw);
-    canvas.addEventListener("mouseleave", stopDraw);
+    canvas.addEventListener("touchstart", (e) => { e.preventDefault(); isDrawing = true; const pos = getCanvasPos(e); ctx.beginPath(); ctx.moveTo(pos.x, pos.y); }, { passive: false });
+    canvas.addEventListener("touchmove", (e) => { e.preventDefault(); if (!isDrawing) return; const pos = getCanvasPos(e); ctx.lineTo(pos.x, pos.y); ctx.stroke(); }, { passive: false });
+    canvas.addEventListener("touchend", () => isDrawing = false);
 
-    canvas.addEventListener("touchstart", (e) => { e.preventDefault(); startDraw(e); }, { passive: false });
-    canvas.addEventListener("touchmove", (e) => { e.preventDefault(); moveDraw(e); }, { passive: false });
-    canvas.addEventListener("touchend", stopDraw);
-
-    function clearNotepadCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
+    function clearNotepadCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
     function downloadNotepadImage() {
       const link = document.createElement("a");
       link.download = "purelearn_notes.png";
@@ -3195,8 +2382,8 @@
 
     function brainstormFromCanvas() {
       switchView("view-dashboard");
-      chatInput.value = "Help me brainstorm Socratic questions on Newton's Second Law: F = m · a and how it applies to continuous wave motion.";
-      handleSend();
+      document.getElementById("userChatInput").value = "Help me brainstorm Socratic questions on Newton's Second Law: F = m · a and how it applies to continuous wave motion.";
+      sendActiveChatMessage();
     }
 
     function drawDefaultEquations() {
@@ -3208,19 +2395,84 @@
       ctx.fillText("What is Newton's law?", 100, 360);
     }
 
-    // --- Initial Startup ---
+    // --- Helpers ---
+    function openNewChatPrompt() {
+      const title = prompt("Enter topic for new Socratic session:", "Quantum Mechanics");
+      if (title) {
+        fetch(`${API_BASE}/api/chats/new`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title: title, subject: title })
+        }).then(res => res.json()).then(newChat => {
+          fetchWorkspaceData().then(() => selectChat(newChat.id));
+        });
+      }
+    }
+
+    function resetActiveChatHistory() {
+      const chat = workspaceData.chats.find(c => c.id === activeChatId);
+      if (chat) {
+        chat.messages = [{
+          role: "assistant",
+          content: `Dialogue reset for **${chat.title}**. What first principles would you like to investigate?`,
+          timestamp: "Just now"
+        }];
+        loadActiveChat(activeChatId);
+      }
+    }
+
+    function copyMessageText(el) {
+      const text = el.closest(".message-body").innerText;
+      navigator.clipboard.writeText(text);
+      el.innerText = "Copied!";
+      setTimeout(() => el.innerText = "Copy", 1500);
+    }
+
+    function cycleSocraticLevel() {
+      socraticLevel = (socraticLevel % 3) + 1;
+      document.getElementById("chipSocratic").innerText = `Socratic: Level ${socraticLevel}`;
+    }
+
+    function toggleAdhdMode() {
+      adhdMode = !adhdMode;
+      document.getElementById("chipAdhd").classList.toggle("active", adhdMode);
+    }
+
+    function toggleDyslexiaMode() {
+      dyslexiaMode = !dyslexiaMode;
+      document.getElementById("chipDyslexia").classList.toggle("active", dyslexiaMode);
+    }
+
+    function escapeHtml(str) {
+      return String(str || "").replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function escapeAttribute(str) {
+      return String(str || "").replace(/'/g, "\\'").replace(/"/g, '&quot;').replace(/\n/g, ' ');
+    }
+
+    function filterChatList(query) {
+      if (!workspaceData) return;
+      const q = query.toLowerCase();
+      const filtered = workspaceData.chats.filter(c => c.title.toLowerCase().includes(q) || c.subject.toLowerCase().includes(q));
+      renderChatsSidebar(filtered);
+    }
+
+    function filterNotesList(query) {
+      if (!workspaceData) return;
+      const q = query.toLowerCase();
+      const filtered = workspaceData.notes.filter(n => n.title.toLowerCase().includes(q) || n.content.toLowerCase().includes(q));
+      renderNotesList(filtered);
+    }
+
+    function filterGlobalSearch(query) {
+      filterChatList(query);
+      filterNotesList(query);
+    }
+
+    // Startup
     window.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem("purelearn-theme") || "light";
-      currentThemeIndex = themes.indexOf(savedTheme);
-      if (currentThemeIndex === -1) currentThemeIndex = 0;
-      applyTheme(savedTheme);
-
-      window.addEventListener("resize", () => {
-        if (document.getElementById("view-notepad").classList.contains("active")) {
-          initCanvasDimensions();
-        }
-      });
-
+      fetchWorkspaceData();
       renderMath();
     });
   </script>

@@ -32,3 +32,6 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Audio & Data Cache
+data/audio_cache/
