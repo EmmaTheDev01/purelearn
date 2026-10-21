@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://purelearn.vigilance.rw/logo.png" alt="Purelearn Logo" width="100" />
+</p>
+
 # Purelearn AI Model Engine (PyTorch)
 
 A custom **Transformer Neural Language Model and AI Engine** engineered from scratch in **PyTorch** for [Purelearn.ai](https://purelearn.vigilance.rw) — *Your Neuro-Inclusive Socratic AI Tutor*.
