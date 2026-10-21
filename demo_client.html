@@ -1566,6 +1566,152 @@
     .quiz-option-btn.selected { border-color: #2563eb; background: #eff6ff; font-weight: 600; }
     .quiz-option-btn.correct { border-color: #16a34a; background: #f0fdf4; color: #16a34a; font-weight: 700; }
 
+    /* Custom Alert, Confirm & Prompt Modals */
+    .custom-dialog-backdrop {
+      z-index: 250;
+      animation: modalFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .custom-dialog-card {
+      width: 440px;
+      max-width: 92vw;
+      padding: 22px 24px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      animation: modalScaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-sizing: border-box;
+    }
+
+    .custom-dialog-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .custom-dialog-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .custom-dialog-icon-box.info {
+      background: var(--accent-badge);
+      color: var(--accent-badge-text);
+      border: 1px solid #bfdbfe;
+    }
+
+    .custom-dialog-icon-box.success {
+      background: var(--badge-green);
+      color: var(--badge-green-text);
+      border: 1px solid #bbf7d0;
+    }
+
+    .custom-dialog-icon-box.warning {
+      background: var(--badge-orange);
+      color: var(--badge-orange-text);
+      border: 1px solid #fed7aa;
+    }
+
+    .custom-dialog-icon-box.error {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+
+    .custom-dialog-header-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .custom-dialog-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .custom-dialog-body {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .dialog-prompt-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+
+    .dialog-prompt-input:focus {
+      border-color: var(--border-focus);
+      background: var(--bg-surface);
+    }
+
+    .custom-dialog-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .btn-dialog-secondary {
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-dialog-secondary:hover {
+      background: var(--bg-subtle);
+      border-color: var(--text-light);
+    }
+
+    .btn-dialog-primary {
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--primary);
+      color: var(--primary-fg);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .btn-dialog-primary:hover {
+      opacity: 0.92;
+    }
+
+    .btn-dialog-primary.btn-danger {
+      background: #dc2626;
+      color: white;
+    }
+
     /* Responsive Breakpoints ensuring content fits all device widths */
     @media (max-width: 1200px) {
       .workspace-right-progress { width: 260px; padding: 12px; }
@@ -2311,6 +2457,86 @@
     </div>
   </div>
 
+  <!-- ==========================================================================
+       CUSTOM DIALOG MODALS: Alert, Confirm & Prompt
+       ========================================================================== -->
+  <!-- Custom Alert Modal -->
+  <div class="modal-backdrop custom-dialog-backdrop" id="customAlertModal">
+    <div class="modal-card custom-dialog-card" role="dialog" aria-modal="true" aria-labelledby="customAlertTitle">
+      <div class="custom-dialog-header">
+        <div class="custom-dialog-icon-box info" id="customAlertIconBox">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+        </div>
+        <div class="custom-dialog-header-text">
+          <h3 class="custom-dialog-title" id="customAlertTitle">Notice</h3>
+        </div>
+        <button class="modal-close-btn" onclick="resolveCustomAlert()" title="Close">&times;</button>
+      </div>
+      <div class="custom-dialog-body" id="customAlertMessage">
+        Notice message text
+      </div>
+      <div class="custom-dialog-footer">
+        <button class="btn-dialog-primary" id="customAlertOkBtn" onclick="resolveCustomAlert()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Confirm Modal -->
+  <div class="modal-backdrop custom-dialog-backdrop" id="customConfirmModal">
+    <div class="modal-card custom-dialog-card" role="dialog" aria-modal="true" aria-labelledby="customConfirmTitle">
+      <div class="custom-dialog-header">
+        <div class="custom-dialog-icon-box warning" id="customConfirmIconBox">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </div>
+        <div class="custom-dialog-header-text">
+          <h3 class="custom-dialog-title" id="customConfirmTitle">Confirm Action</h3>
+        </div>
+        <button class="modal-close-btn" onclick="resolveCustomConfirm(false)" title="Close">&times;</button>
+      </div>
+      <div class="custom-dialog-body" id="customConfirmMessage">
+        Are you sure you want to proceed?
+      </div>
+      <div class="custom-dialog-footer">
+        <button class="btn-dialog-secondary" id="customConfirmCancelBtn" onclick="resolveCustomConfirm(false)">Cancel</button>
+        <button class="btn-dialog-primary" id="customConfirmOkBtn" onclick="resolveCustomConfirm(true)">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Prompt Modal -->
+  <div class="modal-backdrop custom-dialog-backdrop" id="customPromptModal">
+    <div class="modal-card custom-dialog-card" role="dialog" aria-modal="true" aria-labelledby="customPromptTitle">
+      <div class="custom-dialog-header">
+        <div class="custom-dialog-icon-box info" id="customPromptIconBox">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+        </div>
+        <div class="custom-dialog-header-text">
+          <h3 class="custom-dialog-title" id="customPromptTitle">Input Required</h3>
+        </div>
+        <button class="modal-close-btn" onclick="resolveCustomPrompt(null)" title="Close">&times;</button>
+      </div>
+      <div class="custom-dialog-body">
+        <p id="customPromptMessage" style="margin-bottom:12px;"></p>
+        <input type="text" class="dialog-prompt-input" id="customPromptInput" autocomplete="off" />
+      </div>
+      <div class="custom-dialog-footer">
+        <button class="btn-dialog-secondary" id="customPromptCancelBtn" onclick="resolveCustomPrompt(null)">Cancel</button>
+        <button class="btn-dialog-primary" id="customPromptOkBtn" onclick="submitCustomPrompt()">Submit</button>
+      </div>
+    </div>
+  </div>
+
   <audio id="globalAudioPlayer" style="display:none;"></audio>
 
   <!-- ==========================================================================
@@ -2335,6 +2561,173 @@
     const audioBanner = document.getElementById("audioPlayerBanner");
     const audioStatusText = document.getElementById("audioStatusText");
     const audioToggleBtn = document.getElementById("audioToggleBtn");
+
+    // ==========================================================================
+    // Custom Alert, Confirm & Prompt Modals
+    // ==========================================================================
+    let alertPromiseResolve = null;
+    let confirmPromiseResolve = null;
+    let promptPromiseResolve = null;
+
+    const dialogSvgIcons = {
+      info: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`,
+      success: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`,
+      warning: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`,
+      error: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`,
+      prompt: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>`
+    };
+
+    function showCustomAlert(message, options = {}) {
+      return new Promise((resolve) => {
+        alertPromiseResolve = resolve;
+        const title = options.title || "Notice";
+        const type = options.type || "info";
+        const btnText = options.buttonText || "OK";
+
+        document.getElementById("customAlertTitle").innerText = title;
+        document.getElementById("customAlertMessage").innerHTML = escapeHtml(String(message || "")).replace(/\n/g, "<br>");
+        document.getElementById("customAlertOkBtn").innerText = btnText;
+
+        const iconBox = document.getElementById("customAlertIconBox");
+        iconBox.className = `custom-dialog-icon-box ${type}`;
+        iconBox.innerHTML = dialogSvgIcons[type] || dialogSvgIcons.info;
+
+        const modal = document.getElementById("customAlertModal");
+        modal.classList.add("active");
+        setTimeout(() => document.getElementById("customAlertOkBtn").focus(), 50);
+      });
+    }
+
+    function resolveCustomAlert() {
+      const modal = document.getElementById("customAlertModal");
+      modal.classList.remove("active");
+      if (alertPromiseResolve) {
+        const resolve = alertPromiseResolve;
+        alertPromiseResolve = null;
+        resolve();
+      }
+    }
+
+    function showCustomConfirm(message, options = {}) {
+      return new Promise((resolve) => {
+        confirmPromiseResolve = resolve;
+        const title = options.title || "Confirm Action";
+        const type = options.type || (options.isDanger ? "warning" : "info");
+        const confirmText = options.confirmText || "Confirm";
+        const cancelText = options.cancelText || "Cancel";
+
+        document.getElementById("customConfirmTitle").innerText = title;
+        document.getElementById("customConfirmMessage").innerHTML = escapeHtml(String(message || "")).replace(/\n/g, "<br>");
+        
+        const okBtn = document.getElementById("customConfirmOkBtn");
+        okBtn.innerText = confirmText;
+        okBtn.className = options.isDanger ? "btn-dialog-primary btn-danger" : "btn-dialog-primary";
+
+        document.getElementById("customConfirmCancelBtn").innerText = cancelText;
+
+        const iconBox = document.getElementById("customConfirmIconBox");
+        iconBox.className = `custom-dialog-icon-box ${type}`;
+        iconBox.innerHTML = dialogSvgIcons[type] || dialogSvgIcons.warning;
+
+        const modal = document.getElementById("customConfirmModal");
+        modal.classList.add("active");
+        setTimeout(() => okBtn.focus(), 50);
+      });
+    }
+
+    function resolveCustomConfirm(value) {
+      const modal = document.getElementById("customConfirmModal");
+      modal.classList.remove("active");
+      if (confirmPromiseResolve) {
+        const resolve = confirmPromiseResolve;
+        confirmPromiseResolve = null;
+        resolve(Boolean(value));
+      }
+    }
+
+    function showCustomPrompt(message, defaultValue = "", options = {}) {
+      return new Promise((resolve) => {
+        promptPromiseResolve = resolve;
+        const title = options.title || "Input Required";
+        const placeholder = options.placeholder || "";
+        const confirmText = options.confirmText || "OK";
+        const cancelText = options.cancelText || "Cancel";
+
+        document.getElementById("customPromptTitle").innerText = title;
+        document.getElementById("customPromptMessage").innerText = String(message || "");
+        
+        const input = document.getElementById("customPromptInput");
+        input.value = defaultValue || "";
+        input.placeholder = placeholder;
+        
+        document.getElementById("customPromptOkBtn").innerText = confirmText;
+        document.getElementById("customPromptCancelBtn").innerText = cancelText;
+
+        const iconBox = document.getElementById("customPromptIconBox");
+        iconBox.className = "custom-dialog-icon-box info";
+        iconBox.innerHTML = dialogSvgIcons.prompt;
+
+        const modal = document.getElementById("customPromptModal");
+        modal.classList.add("active");
+        setTimeout(() => {
+          input.focus();
+          input.select();
+        }, 50);
+      });
+    }
+
+    function submitCustomPrompt() {
+      const input = document.getElementById("customPromptInput");
+      resolveCustomPrompt(input.value);
+    }
+
+    function resolveCustomPrompt(val) {
+      const modal = document.getElementById("customPromptModal");
+      modal.classList.remove("active");
+      if (promptPromiseResolve) {
+        const resolve = promptPromiseResolve;
+        promptPromiseResolve = null;
+        resolve(val);
+      }
+    }
+
+    // Keyboard support for custom dialog modals
+    document.addEventListener("keydown", (e) => {
+      const alertModal = document.getElementById("customAlertModal");
+      const confirmModal = document.getElementById("customConfirmModal");
+      const promptModal = document.getElementById("customPromptModal");
+
+      if (alertModal && alertModal.classList.contains("active")) {
+        if (e.key === "Enter" || e.key === "Escape") {
+          e.preventDefault();
+          resolveCustomAlert();
+        }
+      } else if (confirmModal && confirmModal.classList.contains("active")) {
+        if (e.key === "Escape") {
+          e.preventDefault();
+          resolveCustomConfirm(false);
+        }
+      } else if (promptModal && promptModal.classList.contains("active")) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          submitCustomPrompt();
+        } else if (e.key === "Escape") {
+          e.preventDefault();
+          resolveCustomPrompt(null);
+        }
+      }
+    });
+
+    // Seamless browser window method delegation
+    window.alert = function(msg) {
+      return showCustomAlert(msg);
+    };
+    window.confirm = function(msg) {
+      return showCustomConfirm(msg);
+    };
+    window.prompt = function(msg, defaultVal) {
+      return showCustomPrompt(msg, defaultVal);
+    };
 
     // --- Tab Switching ---
     const pageTitles = {
@@ -2826,9 +3219,30 @@
         const saved = await res.json();
         if (note) { note.title = title; note.content = content; }
         renderNotesList(workspaceData.notes);
-        alert("Note saved successfully!");
+        await showCustomAlert("Study note saved successfully to workspace storage.", { title: "Note Saved", type: "success" });
       } catch (e) {
-        alert("Failed to save note: " + e.message);
+        await showCustomAlert("Failed to save note: " + e.message, { title: "Save Error", type: "error" });
+      }
+    }
+
+    async function createNewNotePrompt() {
+      const title = await showCustomPrompt("Enter title for new study note:", "New Concept Note", {
+        title: "Create Study Note",
+        placeholder: "e.g. Calculus Derivatives, Newton Laws..."
+      });
+      if (title && title.trim()) {
+        const newNote = {
+          id: `note-${Date.now()}`,
+          topic: "STUDY NOTE",
+          title: title.trim(),
+          date: "Just now",
+          content: `# ${title.trim()}\n\nWrite your guided notes or derivations here.\n\n$$\\int f(x) dx$$`
+        };
+        workspaceData.notes.unshift(newNote);
+        activeNoteId = newNote.id;
+        renderNotesList(workspaceData.notes);
+        loadActiveNote(newNote.id);
+        await showCustomAlert(`Note "${title.trim()}" created successfully.`, { title: "Note Created", type: "success" });
       }
     }
 
@@ -2844,7 +3258,7 @@
       sendActiveChatMessage();
     }
 
-    function saveAsNoteFromChat(content) {
+    async function saveAsNoteFromChat(content) {
       const chat = workspaceData.chats.find(c => c.id === activeChatId);
       const title = chat ? `${chat.title} Socratic Summary` : "Study Summary";
       workspaceData.notes.unshift({
@@ -2855,7 +3269,7 @@
         content: content
       });
       renderNotesList(workspaceData.notes);
-      alert("Saved to Notes!");
+      await showCustomAlert(`Session dialogue saved to notes as "${title}".`, { title: "Saved to Notes", type: "success" });
     }
 
     // --- Flashcards Decks ---
@@ -2957,9 +3371,10 @@
         if (data.deck) {
           workspaceData.decks.unshift(data.deck);
           selectDeck(data.deck.id);
+          await showCustomAlert(`Generated 4 new AI flashcards for "${topic}".`, { title: "Flashcard Deck Created", type: "success" });
         }
       } catch (e) {
-        alert("Deck generation error: " + e.message);
+        await showCustomAlert("Deck generation error: " + e.message, { title: "Generation Error", type: "error" });
       }
     }
 
@@ -2977,7 +3392,10 @@
       const title = document.getElementById("uploadTitleInput").value.trim();
       const content = document.getElementById("uploadContentInput").value.trim();
 
-      if (!title) { alert("Please provide a title"); return; }
+      if (!title) {
+        await showCustomAlert("Please provide a title for the study material.", { title: "Validation Error", type: "warning" });
+        return;
+      }
 
       const isUrl = content.startsWith("http://") || content.startsWith("https://");
       try {
@@ -2995,9 +3413,9 @@
         closeUploadModal();
         await fetchWorkspaceData();
         if (data.chat) selectChat(data.chat.id);
-        alert(data.message || "Material uploaded and synthesized!");
+        await showCustomAlert(data.message || "Material uploaded and synthesized!", { title: "Upload Complete", type: "success" });
       } catch (e) {
-        alert("Upload error: " + e.message);
+        await showCustomAlert("Upload error: " + e.message, { title: "Upload Failed", type: "error" });
       }
     }
 
@@ -3069,9 +3487,9 @@
           workspaceData.telemetry = data.telemetry;
           renderTelemetry(data.telemetry);
         }
-        alert(data.message || "Quiz submitted! +50 XP awarded!");
+        await showCustomAlert(data.message || "Quiz submitted! +50 XP awarded!", { title: "Quiz Completed", type: "success" });
       } catch (e) {
-        alert("Quiz submission error: " + e.message);
+        await showCustomAlert("Quiz submission error: " + e.message, { title: "Submission Error", type: "error" });
       }
     }
 
@@ -3147,7 +3565,20 @@
     canvas.addEventListener("touchmove", (e) => { e.preventDefault(); if (!isDrawing) return; const pos = getCanvasPos(e); ctx.lineTo(pos.x, pos.y); ctx.stroke(); }, { passive: false });
     canvas.addEventListener("touchend", () => isDrawing = false);
 
-    function clearNotepadCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+    async function clearNotepadCanvas() {
+      const confirmed = await showCustomConfirm(
+        "Are you sure you want to clear the entire notepad canvas? Your active handwritten derivations will be erased.",
+        {
+          title: "Clear Notepad Canvas",
+          confirmText: "Clear Canvas",
+          cancelText: "Keep Drawing",
+          isDanger: true
+        }
+      );
+      if (confirmed) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
     function downloadNotepadImage() {
       const link = document.createElement("a");
       link.download = "purelearn_notes.png";
@@ -3171,29 +3602,47 @@
     }
 
     // --- Helpers ---
-    function openNewChatPrompt() {
-      const title = prompt("Enter topic for new Socratic session:", "Quantum Mechanics");
-      if (title) {
-        fetch(`${API_BASE}/api/chats/new`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ title: title, subject: title })
-        }).then(res => res.json()).then(newChat => {
-          fetchWorkspaceData().then(() => selectChat(newChat.id));
-        });
+    async function openNewChatPrompt() {
+      const title = await showCustomPrompt("Enter topic for new Socratic session:", "Quantum Mechanics", {
+        title: "New Socratic Chat",
+        placeholder: "e.g. Quantum Mechanics, Linear Algebra, Macroeconomics..."
+      });
+      if (title && title.trim()) {
+        try {
+          const res = await fetch(`${API_BASE}/api/chats/new`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title: title.trim(), subject: title.trim() })
+          });
+          const newChat = await res.json();
+          await fetchWorkspaceData();
+          selectChat(newChat.id);
+        } catch (e) {
+          await showCustomAlert("Failed to initialize session: " + e.message, { title: "Error", type: "error" });
+        }
       }
     }
 
-    function resetActiveChatHistory() {
+    async function resetActiveChatHistory() {
       const chat = workspaceData.chats.find(c => c.id === activeChatId);
-      if (chat) {
-        chat.messages = [{
-          role: "assistant",
-          content: `Dialogue reset for **${chat.title}**. What first principles would you like to investigate?`,
-          timestamp: "Just now"
-        }];
-        loadActiveChat(activeChatId);
-      }
+      if (!chat) return;
+      const confirmed = await showCustomConfirm(
+        `Are you sure you want to reset the dialogue for "${chat.title}"? Previous chat messages will be cleared.`,
+        {
+          title: "Reset Dialogue",
+          confirmText: "Reset Conversation",
+          cancelText: "Keep Messages",
+          isDanger: true
+        }
+      );
+      if (!confirmed) return;
+      chat.messages = [{
+        role: "assistant",
+        content: `Dialogue reset for **${chat.title}**. What first principles would you like to investigate?`,
+        timestamp: "Just now"
+      }];
+      loadActiveChat(activeChatId);
+      await showCustomAlert("Conversation history reset.", { title: "Reset Complete", type: "info" });
     }
 
     function copyMessageText(el) {
