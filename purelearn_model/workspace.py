@@ -36,176 +36,7 @@ DEFAULT_INITIAL_DATA: Dict[str, Any] = {
             "Only 83 XP needed to reach Scholar Level 17.",
         ],
     },
-    "chats": [
-        {
-            "id": "chat-math-1",
-            "title": "Mathematics",
-            "subject": "Mathematics",
-            "type": "Text",
-            "date": "9/7/2026",
-            "pinned": True,
-            "grounding": "Grounded in Text source (Calculus & Mechanics)",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "Can you explain how the derivative applies to an oscillating current like $I(t) = 5\\sin(2t)$?",
-                    "timestamp": "12:54 PM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "Welcome back to your calculus inquiry. When analyzing $I(t) = 5\\sin(2t)$, let's look at the underlying relationship between electric charge $q(t)$ and current $I(t)$.\n\n### 4. Common Pitfalls, Edge Cases & Student Misconceptions\n• **Forgetting the Chain Rule in Reverse (U-Substitution):** When integrating an oscillating current $I(t) = 5\\sin(2t)$, students often forget to divide by the inner coefficient ($2$).\n• **Ignoring the Constant of Integration ($+C$):** When working with indefinite integrals, leaving off $+C$ loses an entire family of valid vertical shifts.\n\n### 5. Guided Socratic Discovery & Practice Challenge\nIf we change our current function to $I(t) = 5\\sin(4t)$ over the exact same time interval from $t = 0$ to $t = \\pi/4$, how do you predict the total accumulated charge $Q$ will change compared to our previous result of $2.5\\text{ Coulombs}$?\n\n*Hint: Think about how doubling the frequency compresses the wave horizontally, and what that does to the area under the curve!*",
-                    "timestamp": "12:59 PM"
-                }
-            ]
-        },
-        {
-            "id": "chat-webdev-1",
-            "title": "Web Development",
-            "subject": "Web Development",
-            "type": "Text",
-            "date": "7/25/2026",
-            "pinned": True,
-            "grounding": "Grounded in Modern Web Architecture",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "Why is client-side state hydration tricky when using Server-Sent Events?",
-                    "timestamp": "03:15 PM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "When dealing with real-time SSE token streams, traditional DOM re-renders can destroy user scroll position and cursor focus.\n\nTo overcome this, modern architectures decouple the incoming token buffer from the rendered KaTeX equations, using requestAnimationFrame batching.",
-                    "timestamp": "03:16 PM"
-                }
-            ]
-        },
-        {
-            "id": "chat-general-1",
-            "title": "General Chat (09:15 AM)",
-            "subject": "General STEM",
-            "type": "Text",
-            "date": "10/21/2026",
-            "pinned": False,
-            "grounding": "Grounded in General Inquiry",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "What is the primary difference between passive memorization and Socratic inquiry?",
-                    "timestamp": "09:15 AM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "Passive memorization stores facts in short-term recall without synaptic integration. Socratic inquiry prompts your brain to synthesize intermediate premises, forming resilient cognitive schemas that survive exam stress.",
-                    "timestamp": "09:16 AM"
-                }
-            ]
-        },
-        {
-            "id": "chat-python-1",
-            "title": "I would like to study Python...",
-            "subject": "Computer Science",
-            "type": "Text",
-            "date": "9/24/2026",
-            "pinned": False,
-            "grounding": "Grounded in Python 3 Systems Architecture",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "How do Python generators save memory compared to list comprehensions?",
-                    "timestamp": "11:20 AM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "A list comprehension allocates the entire sequence in RAM simultaneously ($O(N)$ memory). A generator function with `yield` produces values on demand ($O(1)$ memory), retaining only its current frame state.",
-                    "timestamp": "11:22 AM"
-                }
-            ]
-        },
-        {
-            "id": "chat-matrix-1",
-            "title": "I need to learn about matrix...",
-            "subject": "Linear Algebra",
-            "type": "Text",
-            "date": "9/11/2026",
-            "pinned": False,
-            "grounding": "Grounded in Linear Algebra & Vector Spaces",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "What does an eigenvalue geometrically represent in a linear transformation?",
-                    "timestamp": "02:10 PM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "When a matrix $A$ acts on a vector $v$, it generally rotates and scales it. An eigenvector is a special direction where $A v = \\lambda v$: the vector is not rotated at all, only stretched by the factor $\\lambda$.",
-                    "timestamp": "02:12 PM"
-                }
-            ]
-        },
-        {
-            "id": "chat-yt-aiml-1",
-            "title": "YouTube: AI, Machine Learning...",
-            "subject": "Artificial Intelligence",
-            "type": "PDF",
-            "date": "9/11/2026",
-            "pinned": False,
-            "grounding": "Grounded in Ingested AI Architecture PDF",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "Why does Multi-Head Attention split queries and keys into separate subspaces?",
-                    "timestamp": "04:30 PM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "Splitting into $h$ heads allows the model to jointly attend to information from different representation subspaces at different positions. One head may track grammatical agreement, while another attends to spatial relationships.",
-                    "timestamp": "04:32 PM"
-                }
-            ]
-        },
-        {
-            "id": "chat-africa-prize-1",
-            "title": "https://africaprize.raeng...",
-            "subject": "Engineering Innovation",
-            "type": "Link",
-            "date": "9/8/2026",
-            "pinned": False,
-            "grounding": "Grounded in Royal Academy of Engineering Resource",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "What is the critical failure point when scaling hardware prototypes into rural markets?",
-                    "timestamp": "10:05 AM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "Local supply-chain fragility for replacement parts and extreme thermal variation. Scalable engineering designs prioritize modular, off-the-shelf local components over proprietary enclosures.",
-                    "timestamp": "10:07 AM"
-                }
-            ]
-        },
-        {
-            "id": "chat-n8n-1",
-            "title": "n8n Zero to technical application",
-            "subject": "Automation Engineering",
-            "type": "YouTube",
-            "date": "9/5/2026",
-            "pinned": False,
-            "grounding": "Grounded in n8n Orchestration Video Transcript",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "How do webhook trigger nodes authenticate incoming requests reliably?",
-                    "timestamp": "08:40 PM"
-                },
-                {
-                    "role": "assistant",
-                    "content": "Via HMAC-SHA256 signature verification in headers, combined with timestamp window validation to prevent replay attacks.",
-                    "timestamp": "08:42 PM"
-                }
-            ]
-        }
-    ],
+    "chats": [],
     "notes": [
         {
             "id": "note-math-1",
@@ -380,7 +211,7 @@ class WorkspaceManager:
                 "grounding": "Grounded in Text Inquiry",
                 "messages": [],
             }
-            data["chats"].insert(2, matched)  # Insert right after pinned
+            data["chats"].insert(0, matched)
 
         matched["messages"].append({
             "role": "user",
@@ -423,7 +254,7 @@ class WorkspaceManager:
                 }
             ],
         }
-        data["chats"].insert(2, new_chat)
+        data["chats"].insert(0, new_chat)
         self.save(data)
         return new_chat
 

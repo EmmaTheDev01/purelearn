@@ -65,7 +65,10 @@ if CHECKPOINT_PATH.exists():
         checkpoint = torch.load(CHECKPOINT_PATH, map_location="cpu", weights_only=False)
         if isinstance(checkpoint, dict) and "config" in checkpoint:
             saved_config = checkpoint["config"]
-            model_config = PureLearnConfig(**saved_config)
+            if isinstance(saved_config, dict):
+                model_config = PureLearnConfig(**saved_config)
+            elif isinstance(saved_config, PureLearnConfig):
+                model_config = saved_config
             model = PureLearnLM(model_config)
             model.load_state_dict(checkpoint["model_state_dict"])
         elif isinstance(checkpoint, PureLearnLM):
@@ -455,7 +458,7 @@ def upload_material_endpoint(req: MaterialUploadRequest):
             }
         ],
     }
-    data["chats"].insert(2, new_chat)
+    data["chats"].insert(0, new_chat)
 
     # Save note
     data.setdefault("notes", []).insert(0, {
