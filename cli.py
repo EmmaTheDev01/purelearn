@@ -301,6 +301,8 @@ def main():
         description="PureLearn AI: Socratic Neuro-Inclusive Terminal Tutor"
     )
     parser.add_argument("prompt", nargs="?", default=None, help="Optional single prompt to evaluate directly")
+    parser.add_argument("-q", "--query", type=str, default=None, help="Direct inquiry query text")
+    parser.add_argument("-i", "--interactive", action="store_true", help="Force interactive REPL mode")
     parser.add_argument("--checkpoint", type=str, default=None, help="Path to model weights checkpoint (.pt)")
     parser.add_argument("--device", type=str, default=None, help="Device to execute on ('cuda', 'mps', 'cpu')")
     parser.add_argument("--socratic-level", type=int, default=2, choices=[1, 2, 3], help="1=Gentle, 2=Guided, 3=Strict")
@@ -314,8 +316,9 @@ def main():
 
     engine = load_engine(checkpoint_arg=args.checkpoint, device_arg=args.device)
 
-    if args.prompt:
-        run_single_shot(engine, args.prompt, args)
+    query_text = args.query or args.prompt
+    if query_text and not args.interactive:
+        run_single_shot(engine, query_text, args)
     else:
         run_interactive(engine, args)
 
