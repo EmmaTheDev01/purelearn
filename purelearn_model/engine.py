@@ -683,7 +683,13 @@ class PureLearnEngine:
                     break
                 yield strip_emojis(piece)
 
-    def generate_study_notes(self, topic_or_transcript: str) -> Dict[str, Any]:
+    def generate_study_notes(
+        self,
+        topic_or_transcript: str,
+        adhd_mode: bool = False,
+        dyslexia_mode: bool = False,
+        bionic_reading: bool = False,
+    ) -> Dict[str, Any]:
         """
         Generates structured Markdown study notes without emojis.
         """
@@ -709,7 +715,12 @@ class PureLearnEngine:
         if "<|im_end|>" in raw_text:
             raw_text = raw_text.split("<|im_end|>")[0]
 
-        formatted_notes = self.format_neuro_inclusive(raw_text)
+        formatted_notes = self.format_neuro_inclusive(
+            raw_text,
+            adhd_mode=adhd_mode,
+            dyslexia_mode=dyslexia_mode,
+            bionic_reading=bionic_reading,
+        )
 
         if len(formatted_notes.strip()) < 20:
             formatted_notes = (
@@ -731,7 +742,7 @@ class PureLearnEngine:
             "notes_markdown": strip_emojis(formatted_notes),
         }
 
-    def generate_flashcards(self, text_or_topic: str) -> List[Dict[str, str]]:
+    def generate_flashcards(self, text_or_topic: str, num_cards: int = 3) -> List[Dict[str, str]]:
         """
         Generates active recall Q&A flashcards without emojis.
         """
@@ -757,7 +768,7 @@ class PureLearnEngine:
         flashcards = []
         pattern = re.findall(r"\*\*Q:\*\*\s*(.*?)\s*\*\*A:\*\*\s*(.*?)(?=(?:\*\*Q:\*\*|$))", raw_text, re.DOTALL)
         
-        for q, a in pattern:
+        for q, a in pattern[:num_cards]:
             if q.strip() and a.strip():
                 flashcards.append({
                     "question": strip_emojis(q.strip()),

@@ -85,7 +85,35 @@ pip install -r requirements.txt
 python3 -m unittest discover -s . -p "test_*.py"
 ```
 
-### 3. Crawl Internet Data for Training
+### 3. Run in Terminal (Interactive Socratic CLI)
+
+Run the model directly inside your terminal with real-time streaming, KaTeX formulas, and NLP human adaptation:
+
+```bash
+# Launch interactive terminal session:
+./chat.sh
+# or directly:
+python3 cli.py
+
+# Run with real-time NLP intent, affect, and misconception inspection:
+python3 cli.py --show-nlp
+
+# Run a single-shot inquiry directly:
+python3 cli.py "How do I take the derivative of f(x) = x^2 * sin(x)?"
+
+# Terminal Slash Commands during interactive chat:
+#   /level <1-3>   Change Socratic inquiry depth (1=Gentle, 2=Guided, 3=Strict)
+#   /adhd          Toggle ADHD micro-chunking
+#   /dyslexia      Toggle Dyslexia high-readability formatting
+#   /bionic        Toggle Bionic reading fixations
+#   /nlp           Toggle real-time NLP affect & intent analysis
+#   /notes <topic> Synthesize structured Markdown study notes
+#   /cards <topic> Generate active recall flashcards
+#   /clear         Reset conversation history
+#   /exit          Quit session
+```
+
+### 4. Crawl Internet Data for Training
 
 Harvest Wikipedia articles, arXiv papers, or arbitrary educational URLs, and convert them into Socratic training data:
 
